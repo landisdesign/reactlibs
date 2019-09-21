@@ -1,0 +1,240 @@
+{
+
+	"adjective": {
+		"title": "Adjective",
+		"words": [
+			"burnt", "happy", "huge", "tiny", "small", "round", "square", "pasty", "quiet", "loud",
+			"smart", "silly", "skittish", "excellent", "active", "passive", "quirky", "mild", "testy", "quick",
+			"feisty", "immense", "questionable", "dusty", "smelly", "sweet", "professional", "rude", "amateur", "cynical",
+			"critical", "courteous", "supportive", "moldy", "dramatic", "squirrelly", "typical", "random", "disheveled", "dapper",
+			"painful", "tender", "calloused", "rhapsodic", "incredible", "bumpy", "smooth", "slim", "sluggish", "staticky",
+			"sickly", "vibrant", "pastel", "winged", "fast", "slow", "short", "tall", "cold", "hot",
+			"free", "expensive", "cheap", "worthy", "worthless", "shadowy", "bright", "hazy", "clear", "shiny",
+			"lustrous", "shady", "infinite", "breathless", "fulfilling", "symbiotic", "effervescent", "climactic", "sibilant", "constructive",
+			"absent", "aberrant", "ridiculous", "inspiring", "creative", "destructive", "inflationary", "recessionary", "stable", "certain",
+			"structural", "soothing", "useful", "useless", "plentiful", "scarce", "rabid", "dim", "beautiful", "practical"
+	 	]
+ 	},
+	"animals": {
+		"title": "Animals (plural)",
+		"words": [
+			"bees", "baboons", "orangutangs", "elephants", "ants", "rhinoceroses", "hippopotami", "dogs", "cats", "rats",
+			"horses", "birds", "pelicans", "eagles", "hawks", "rabbits", "foxes", "cows", "pigeons", "bears",
+			"llamas", "camels", "monkeys", "seals", "whales", "dolphins", "fishes", "sharks", "crabs", "walruses",
+			"tigers", "lions", "giraffes", "zebras", "alligators", "crocodiles", "wasps", "ducks", "geese", "termites"
+		]
+	},
+	"color": {
+		"title": "Color",
+		"words": [
+			"red", "blue", "green", "yellow", "white", "black", "brown", "orange", "purple", "grey"
+		]
+	},
+	"food": {
+		"title": "Food",
+		"words": [
+			"strawberry", "orange", "milk", "almond", "date", "cheese", "grape", "apple", "broccoli", "lettuce",
+			"cauliflower", "zucchini", "cherry", "blueberry", "sandwich", "pizza", "cheesecake", "yogurt", "peanut", "coconut"
+		]
+	},
+	"noun": {
+		"title": "Noun",
+		"words": [
+			"bed", "chair", "couch", "sofa", "table", "oven", "sink", "stove", "desk", "window",
+			"door", "rug", "floor", "ceiling", "house", "car", "truck", "airplane", "boat", "train",
+			"spaceship", "shoe", "shirt", "pants", "shorts", "hat", "dress", "jacket", "belt", "tree",
+			"bush", "grass", "road", "sky", "person", "book", "pencil", "knife", "fork", "spoon",
+			"plate", "napkin", "pen", "stapler", "stoplight", "computer", "phone", "rainbow", "cloud", "lightsaber",
+			"wheel", "park", "closet", "bird", "animal", "file", "planner", "suit", "lightpost", "runway",
+			"bank", "supermarket", "office", "building", "cup", "trash can", "bus", "ocean", "planet", "star",
+			"stroller", "frappuccino", "ring", "wallet", "watch", "clock", "piano", "flute", "violin", "bench",
+			"mountain", "hill", "valley", "river", "lake", "sea", "airport", "town", "ball", "card",
+			"city", "dagger", "wand", "ski", "skateboard", "stick", "board", "pan", "shop", "mug"
+		]
+	},
+	"nouns": {
+		"title": "Plural noun",
+		"words": [
+			"beds", "chairs", "couches", "sofas", "tables", "ovens", "sinks", "stoves", "desks", "windows",
+			"doors", "rugs", "floors", "ceilings", "houses", "cars", "trucks", "airplanes", "boats", "trains",
+			"spaceships", "shoes", "shirts", "pants", "shorts", "hats", "dresses", "jackets", "belts", "trees",
+			"bushes", "grasses", "roads", "skies", "people", "books", "pencils", "knives", "forks", "spoons",
+			"plates", "napkins", "pens", "staplers", "stoplights", "computers", "phones", "rainbows", "clouds", "lightsabers",
+			"wheels", "parks", "closets", "birds", "animals", "files", "planners", "suits", "lightposts", "runways",
+			"banks", "supermarkets", "offices", "buildings", "cups", "trash cans", "buses", "oceans", "planets", "stars",
+			"strollers", "frappuccinos", "rings", "wallets", "watches", "clocks", "pianos", "flutes", "violins", "benches",
+			"mountains", "hills", "valleys", "rivers", "lakes", "seas", "airports", "towns", "balls", "cards",
+			"cities", "daggers", "wands", "skis", "skateboards", "sticks", "boards", "pans", "shops", "mugs"
+		]
+	},
+	"occupation": {
+		"title": "Occupation",
+		"words": [
+			"doctor", "lawyer", "accountant", "contractor", "assistant", "developer", "architect", "hermit", "fireman", "police officer",
+			"builder", "carpenter", "cashier", "grocer", "therapist", "singer", "dancer", "actor", "artist", "politician"
+		]
+	},
+	"adverb": {
+		"title": "Adverb",
+		"words": [
+			"happily", "sadly", "merrily", "gladly", "heavily", "lightly", "quickly", "slowly", "easily", "hardly",
+			"queasily", "sprightly", "painfully", "delightedly", "morosely", "loosely", "tightly", "effortlessly", "difficultly", "adeptly",
+			"adroitly", "clumsily", "swiftly", "speedily", "carefully", "recklessly", "aimlessly", "pithily", "mirthlessly", "mirthfully",
+			"stickily", "truthfully", "evasively", "aptly", "horribly", "daintily", "questionably", "dutifully", "adequately", "disturbingly",
+			"effervescently", "smartly", "quietly", "loudly", "stably", "giftedly", "creatively", "destructively", "symbiotically", "stupendously",
+			"serendipitously", "coincidentally", "shiftily", "spiritually", "ridiculously", "spasmodically", "rhythmically", "periodically", "chaotically", "flashily",
+			"greasily", "icily", "archly", "hotly", "glacially", "spiffily", "strategically", "astronomically", "precipitously", "facetiously", 
+			"strangely", "funnily", "abstractly", "concretely", "extraordinarily", "bluely", "testily", "querulously", "radically", "sharply",
+			"smoothly", "paranormally", "normally", "abnormally", "abruptly", "slothfully", "statically", "crazily", "soberly", "hazily",
+			"freely", "simply", "confusedly", "theoretically", "therapeutically", "physically", "wickedly", "nastily", "beatifically", "tersely"
+		]
+	},
+	"armor": {
+		"title": "Piece of armor",
+		"words": [
+			"helmet", "cuirass", "gauntlet", "greave", "shield", "brace", "pauldron", "boot"
+		]
+	},
+	"attitude": {
+		"title": "Attitude",
+		"help": "The noun form, such as <dfn>happiness</dfn>",
+		"words": [
+			"happiness", "sadness", "tiredness", "ennui", "boredom", "loquaciousness", "anger", "sorrow", "silliness", "attentiveness"
+		]
+	},
+	"body part": {
+		"title": "Body part",
+		"words": [
+			"arm", "leg", "neck", "head", "ear", "hand", "foot", "finger", "thumb", "toe",
+			"elbow", "knee", "hip", "waist", "nose", "mouth", "eye", "chest", "back", "heart"
+		]
+	},
+	"bug": {
+		"title": "Bug",
+		"words": [
+			"ant", "spider", "termite", "wasp", "bee",
+			"beetle", "cockroach", "centipede", "millipede", "earthworm",
+			"butterfly", "moth", "pillbug", "fly", "snail"
+		]
+	},
+	"name": {
+		"title": "Name",
+		"words": [
+			"John", "Jim", "Michael", "Paul", "Brian", "Chris", "Travis", "William", "Brad", "Jeff",
+			"Tyson", "Shawn", "Allen", "Haseeb", "Imran", "Alice", "Louisa", "Janice", "Elizabeth", "Christie",
+			"Abbie", "Mary", "Joan", "Susan", "Ruth", "Melinda", "Nina", "Karen", "Michelle", "Tanya"
+		]
+	},
+	"number": {
+		"title": "Number",
+		"words": [
+			"one", "two", "three", "four", "five",
+			"six", "seven", "eight", "nine", "10",
+			"15", "20", "25", "50", "100"
+		]
+	},
+	"personality": {
+		"title": "Famous person",
+		"words": [
+			"Jimmy Carter", "Luke Skywalker", "Ronald Reagan", "Kublai Kahn", "Nelson Mandela",
+			"Margaret Thatcher", "J.K. Rowling", "Winston Churchill", "Steve Jobs", "Stevie Nicks",
+			"Tupac", "Paul McCartney", "Samuel Jackson", "Keanu Reeves", "Gandalf",
+			"Frodo Baggins", "Han Solo", "David Bowie", "Bruce Lee"
+		]
+	},
+	"imperative": {
+		"title": "Imperative verb",
+		"help": "The verb form used to direct someone, as in &ldquo;<dfn>do</dfn> this&rdquo;",
+		"words": [
+			"live", "love", "grow", "think", "fly", "throw", "stretch", "climb", "shrink", "sign",
+			"cry", "crawl", "write", "read", "paint", "drink", "drain", "pirouette", "dance", "strut",
+			"tremble", "build", "walk", "run", "scream", "smell", "swallow", "eat", "absorb", "reject",
+			"toss", "catapult", "quench", "guzzle", "trash", "flash", "ponder", "disturb", "scratch", "flail",
+			"create", "break", "breathe", "blow", "split", "stop", "go", "buy", "apologize", "contemplate",
+			"squeal", "dramatize", "solve", "chuck", "hurl", "slide", "straddle", "crush", "collapse", "order",
+			"analyze", "dictate", "freak", "brake", "skedaddle", "dream", "park", "drive", "careen", "land",
+			"bomb", "party", "simplify", "chew", "forage", "thrash", "play", "stumble", "brag", "eulogize",
+			"fabricate", "distort", "trample", "point", "press", "fold", "balloon", "polish", "magnify", "diminish",
+			"comb", "smear", "slam", "swim", "surf", "elevate", "aggravate", "spritz", "crease", "finish"
+		]
+	},
+	"past participle": {
+		"title": "Past participle",
+		"help": "The verb form used to describe things that happened in the past, usually ending in &ldquo;ed,&rdquo; such as &ldquo;it had <dfn>ended</dfn>&rdquo;",
+		"words": [
+			"lived", "loved", "grown", "thought", "flown", "thrown", "stretched", "climbed", "shrunk", "signed",
+			"cried", "crawled", "written", "read", "painted", "drunk", "drained", "pirouetted", "danced", "strutted",
+			"trembled", "built", "walked", "run", "screamed", "smelled", "swallowed", "eaten", "absorbed", "rejected",
+			"tossed", "catapulted", "quenched", "guzzled", "trashed", "flashed", "pondered", "disturbed", "scratched", "flailed",
+			"created", "broken", "breathed", "blown", "split", "stopped", "gone", "bought", "apologized", "contemplated",
+			"squealed", "dramatized", "solved", "chucked", "hurled", "slid", "straddled", "crushed", "collapsed", "ordered",
+			"analyzed", "dictated", "freaked", "braked", "skedaddled", "dreamt", "parked", "driven", "careened", "landed",
+			"bombed", "partied", "simplified", "chewed", "foraged", "thrashed", "played", "stumbled", "bragged", "eulogized",
+			"fabricated", "distorted", "trampled", "pointed", "pressed", "folded", "ballooned", "polished", "magnified", "diminished",
+			"combed", "smeared", "slammed", "swum", "surfed", "elevated", "aggravated", "spritzed", "creased", "finished"
+		]
+	},
+	"present participle": {
+		"title": "Present participle",
+		"help": "The verb form used to describe things that are currently happening, usually ending in &ldquo;ing,&rdquo; such as &ldquo;I am <dfn>doing</dfn>&rdquo;",
+		"words": [
+			"living", "loving", "growing", "thinking", "flying", "throwing", "stretching", "climbing", "shrinking", "signing",
+			"crying", "crawling", "writing", "reading", "painting", "drinking", "draining", "pirouetting", "dancing", "strutting",
+			"trembling", "building", "walking", "running", "screaming", "smelling", "swallowing", "eating", "absorbing", "rejecting",
+			"tossing", "catapulting", "quenching", "guzzling", "trashing", "flashing", "pondering", "disturbing", "scratching", "flailing",
+			"creating", "breaking", "breathing", "blowing", "splitting", "stopping", "going", "buying", "apologizing", "contemplating",
+			"squealing", "dramatizing", "solving", "chucking", "hurling", "sliding", "straddling", "crushing", "collapsing", "ordering",
+			"analyzing", "dictating", "freaking", "braking", "skedaddling", "dreaming", "parking", "driving", "careening", "landing",
+			"bombing", "partying", "simplifying", "chewing", "foraging", "thrashing", "playing", "stumbling", "bragging", "eulogizing",
+			"fabricating", "distorting", "trampling", "pointing", "pressing", "folding", "ballooning", "polishing", "magnifying", "diminishing",
+			"combing", "smearing", "slamming", "swimming", "surfing", "elevating", "aggravating", "spritzing", "creasing", "finishing"
+		]
+	},
+	"verb (3rd person)": {
+		"title": "Third-person verb",
+		"help": "The verb form for describing what someone else is doing, such as &ldquo;he <dfn>does</dfn>&rdquo;",
+		"words": [
+			"lives", "loves", "grows", "thinks", "flies", "throws", "stretches", "climbs", "shrinks", "signs",
+			"cries", "crawls", "writes", "reads", "paints", "drinks", "drains", "pirouettes", "dances", "struts",
+			"trembles", "builds", "walks", "runs", "screams", "smells", "swallows", "eats", "absorbs", "rejects",
+			"tosses", "catapults", "quenches", "guzzles", "trashes", "flashes", "ponders", "disturbs", "scratches", "flails",
+			"creates", "breaks", "breathes", "blows", "splits", "stops", "goes", "buys", "apologizes", "contemplates",
+			"squeals", "dramatizes", "solves", "chucks", "hurls", "slides", "straddles", "crushes", "collapses", "orders",
+			"analyzes", "dictates", "freaks", "brakes", "skedaddles", "dreams", "parks", "drives", "careens", "lands",
+			"bombs", "parties", "simplifies", "chews", "forages", "thrashes", "plays", "stumbles", "brags", "eulogizes",
+			"fabricates", "distorts", "tramples", "points", "presses", "folds", "balloons", "polishes", "magnifies", "diminishes",
+			"combs", "smears", "slams", "swims", "surfs", "elevates", "aggravates", "spritzes", "creases", "finishes"
+		]
+	},
+	"verb (plural)": {
+		"title": "Plural verb",
+		"help": "The verb form for describing what multiple other people are doing, such as &ldquo;they <dfn>do</dfn>&rdquo;",
+		"ref": "imperative"
+	},
+	"verb (transitive)": {
+		"title": "Transitive verb",
+		"help": "The verb form typically used after the word &ldquo;to,&rdquo; such as &ldquo;to <dfn>do</dfn>&rdquo;",
+		"ref": "imperative"
+	},
+	"sound": {
+		"title": "Sound",
+		"words": [
+			"splat", "bing", "boing", "sploosh", "crash", "bang", "ping", "bong", "woosh", "kerpow"
+		]
+	},
+	"subject": {
+		"title": "School subject",
+		"help": "High school or college",
+		"words": [
+			"law", "math", "biology", "chemistry", "literature",
+			"philosophy", "medicing", "computer science", "history", "anthropology"
+		]
+	},
+	"weapons": {
+		"title": "Weapons (plural)",
+		"words": [
+			"daggers", "swords", "guns", "knives", "arrows",
+			"bows", "spears", "bombs", "axes", "shiruken"
+		]
+	}
+}

@@ -1,0 +1,190 @@
+[
+	{
+		"name": "tea",
+		"title": "Green Tea Label",
+		"fields": [
+			"adjective",
+			"past participle",
+			"adjective",
+			"adjective",
+			"nouns",
+			"adjective",
+			"nouns",
+			"verb (3rd person)",
+			"adjective",
+			"imperative",
+			"noun"
+		],
+		"template": "<p>This {{1}} green tea is {{2}} with the highly {{3}}, {{4}} flavor of tart green {{5}} and the {{6}}, sweet flavor of orange {{7}}. This trio {{8}} up a refreshing {{9}} ritual &ndash; either {{10}} hot or over {{11}}.</p>"
+	},
+	{
+		"name": "tolkien-1",
+		"title": "Tolkien Trilogy I",
+		"fields": [
+			"noun",
+			"adjective",
+			"animals",
+			"animals",
+			"animals",
+			"present participle",
+			"adjective",
+			"personality",
+			"color",
+			"nouns",
+			"nouns",
+			"past participle",
+			"nouns"
+		],
+		"template": "<p>In J.R.R. Tolkien&rsquo;s famous trilogy <cite>The Lord of the {{1}}s</cite> the first book is called <cite>Fellowship of the {{1}}.</cite> In this book a group of {{2}} Hobbits flee their hometown. They eventually join a fellowship made up of {{3}}, {{4}} and {{5}}, with the goal of {{6}} the One {{1}}. They begin by traveling through the {{7}} mountains, where {{8}} the {{9}} is lost. They continue on to the forest, where the queen of the {{5}} gives them {{10}} to ride down the river. At the end of the book, Merri and Pippin get captured by {{11}}, and Frodo is {{12}} by one of his fellow {{13}} and leaves on his own (but with Sam).</p>"
+	},
+	{
+		"name": "tolkien-2",
+		"title": "Tolkien Trilogy II",
+		"fields": [
+			"noun",
+			"number",
+			"noun",
+			"noun",
+			"noun",
+			"past participle",
+			"present participle",
+			"body part",
+			"armor",
+			"animals",
+			"verb (plural)",
+			"sound",
+			"noun",
+			"verb (plural)",
+			"nouns"
+		],
+		"template": "<p>In J.R.R. Tolkien&rsquo;s famous trilogy <cite>The Lord of the {{1}}s,</cite> the second book is called <cite>{{2}} Tower(s).</cite> During the course of this book, two stories are followed. The first is that of the {{3}}, the {{4}} and the {{5}} as they pursue the {{6}} Hobbits. Along the way, they get waylaid into {{7}} the people of Rohan, who are battling against the horders sent by Saruman (identified by the white {{8}}). The eventually end up in {{9}}&rsquo;s Deep, which they defend from the attacking {{10}}. The second story is that of Frodo and Sam as they {{11}} for a way into Mordor. Following them is {{12}}, a miserable {{13}} that is bound to the one {{1}}. They capture him and force him to {{14}} them to the {{15}} of Mordor. They abandon hopes of getting into Mordor there, so they look for another way. Luckily {{12}} knows another way.</p>"
+	},
+	{
+		"name": "tolkien-3",
+		"title": "Tolkien Trilogy III",
+		"fields": [
+			"noun",
+			"occupation",
+			"past participle",
+			"personality",
+			"present participle",
+			"adjective",
+			"nouns",
+			"sound",
+			"bug",
+			"past participle",
+			"animals",
+			"noun",
+			"body part"
+		],
+		"template": "<p>In J.R.R. Tolkien&rsquo;s famous trilogy <cite>The Lord of the {{1}}s,</cite> the third book is called <cite>Return of the {{2}}.</cite> In this final book, the two storylines from the second book are continued. In the first, the {{3}} Hobbits are reunited with their companions and {{4}} who was thought lost. Then they split up again, {{4}} taking Pippin to Gondor, and the rest {{5}} with the Rohirim the long way to Gondor. Along the way to Gondor, three of them get diverted through the Paths of the {{6}}. Meanwhile, Frodo and Sam are being guided up the winding {{7}} by {{8}}. They then enter a cave, where a giant {{9}} attacks Frodo. He wakes up in a tower, then is {{10}} by Sam. They then continue on towards Mt. Doom. Back in the other story line, the three friends have recruited ghosts to help battle the {{11}} in Gondor. As they are nearing defeat, Frodo and Sam reach Mt. Doom. There, Frodo decides not to throw the {{1}} into the {{12}}. However, {{9}} bites his {{13}} off, and falls, taking it with him. In the end, the remaining members of the fellowship are reunited, and Aragorn is crowned {{2}} of Gondor.</p>"
+	},
+	{
+		"name": "pbj",
+		"title": "How to make a PB&amp;J",
+		"fields": [
+			"color",
+			"noun",
+			"food",
+			"adjective",
+			"adjective",
+			"number",
+			"noun",
+			"imperative",
+			"imperative",
+			"noun"
+		],
+		"template": "<ol> <li><p>Select the type of bread. Many prefer the taste of {{1}}, while others prefer {{2}} bread because it is healthy.</p></li> <li><p>Choose the flavor of jam/jelly. I personally prefer {{3}} jam, but you can use whatever you want.</p></li> <li><p>Choose the type of peanut butter &ndash; either {{4}} or {{5}}.</p></li> <li><p>Take out {{6}} slice(s) of bread.</p></li> <li><p>Use a {{7}} to {{8}} the jam all over one of the pieces of bread.</p></li> <li><p>Now {{9}} the peanut butter on another slice of bread.</p></li> <li><p>Put them together, and you have a PB&amp;J {{10}}.</p></li> </ol>"
+	},
+	{
+		"name": "bsd",
+		"title": "Berkeley Software Distribution License Disclaimer",
+		"fields": [
+			"past participle",
+			"noun",
+			"adjective",
+			"noun",
+			"noun",
+			"adjective",
+			"adjective",
+			"nouns",
+			"present participle",
+			"nouns",
+			"subject",
+			"attitude",
+			"noun"
+		],
+		"template": "<p>This software is {{1}} by the {{2}} holders and contributors &ldquo;as is&rdquo; and any express or {{3}} warranties, including, but not limited to, the implied warranties of merchantability and {{4}} for a particular {{5}} are disclaimed. In no event shall the {{2}} owner or contributors be liable for any direct, indirect, {{6}}, special, {{7}}, or consequential {{8}} (including, but not limited to, {{9}} or substitute goods or services; loss of use, {{10}}, or profits; or business interruption) however caused and on any theory of {{11}}, whether in contract, strict liability, or tort (including {{12}} or otherwise) arising in any {{13}} out of use of this software, even if advised of the possibility of such {{9}}.</p>"
+	},
+	{
+		"name": "account",
+		"title": "Important Information About Your Account",
+		"fields": [
+			"noun",
+			"imperative",
+			"number",
+			"adjective",
+			"nouns",
+			"noun",
+			"adjective",
+			"nouns",
+			"adverb",
+			"imperative",
+			"noun"
+		],
+		"template": "<p>When you provide a {{1}}, you {{2}} us either to use your information from your {{1}} to make a {{3}}-time {{4}} {{5}} transfer from your account or process this transaction as a {{6}}. When we use your {{1}} to make a(n) {{7}} {{6}} transfer, {{8}} may be withdrawn from your account {{9}}, and you may not {{10}} your {{1}} back from your {{11}} institution.</p>"
+	},
+	{
+		"name": "proverbs",
+		"title": "Ancient Proverbs",
+		"fields": [
+			"noun",
+			"number",
+			"noun",
+			"adjective",
+			"verb (3rd person)",
+			"adjective",
+			"noun",
+			"adjective",
+			"nouns",
+			"noun",
+			"verb (3rd person)"
+		],
+		"template": "<p>&ldquo;A(n) {{1}} in the hand is worth {{2}} in the bush.&rdquo;</p> <p>&ldquo;A(n) {{4}} mouth {{5}} no feet.&rdquo;</p> <p>&ldquo;A {{6}} {{7}} believes anything, but a {{8}} {{7}} gives thought to his {{9}}.&rdquo;</p> <p>&ldquo;A {{10}} in time {{11}} nine.&rdquo;</p>"
+	},
+	{
+		"name": "peanut",
+		"title": "Anybody Want a Peanut?",
+		"fields": [
+			"name",
+			"verb (transitive)",
+			"adverb",
+			"verb (3rd person)",
+			"adjective",
+			"adjective",
+			"noun",
+			"nouns",
+			"imperative",
+			"nouns",
+			"noun"
+		],
+		"template": "<dl><dt>I&ntilde;igo:</dt><dd>That {{1}}, he can fuss.</dd> <dt>Fezzik:</dt><dd>&hellip; fuss &hellip; fuss &hellip; I think he likes to {{2}} at us.</dd> <dt>I&ntilde;igo:</dt><dd>{{3}} he {{4}} no harm.</dd> <dt>Fezzik:</dt><dd>He&rsquo;s really {{5}} on charm.</dd> <dt>I&ntilde;igo:</dt><dd>Oh, you&rsquo;ve a {{6}} {{7}} for rhyme.</dd> <dt>Fezzik:</dt><dd>Yes, some of the time.</dd> <dt>{{1}}:</dt><dd>Enough of that.</dd> <dt>I&ntilde;igo:</dt><dd>Fezzik, are there {{8}} ahead?</dd> <dt>Fezzik:</dt><dd>If there are, we&rsquo;ll all {{9}} dead.</dd> <dt>{{1}}:</dt><dd>No more {{10}} now, I mean it.</dd> <dt>Fezzik:</dt><dd>{{11}} want a peanut?</dd></dl>"
+	},
+	{
+		"name": "cookies",
+		"title": "Fortune Cookies",
+		"fields": [
+			"imperative",
+			"adverb",
+			"adjective",
+			"nouns",
+			"nouns",
+			"adjective",
+			"present participle",
+			"nouns",
+			"noun",
+			"weapons"
+		],
+		"template": "<p>{{1}} {{2}} without being {{3}}.</p> <p>The Universe does not have {{4}} &ndash; it has {{5}}, and {{5}} can be {{6}}.</p> <p>The {{7}} of random {{8}} is too important to be left to chance.</p> <p>You can build a {{9}} with {{10}}, but you can&rsquo;t sit on it for long.</p>"
+	}
+]

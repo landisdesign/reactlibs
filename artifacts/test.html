@@ -1,0 +1,57 @@
+<doctype html>
+<script type="text/javascript">
+
+	const fileFetch = url => {
+		return new Promise((resolve, reject) => {
+			const xhr = new XMLHttpRequest();
+			xhr.onload = () => {
+				resolve(xhr);
+			};
+			xhr.onerror = () => {
+				reject(xhr);
+			}
+			xhr.open("GET", url);
+			xhr.send();
+		});
+	};
+
+	const dereferenceWords = wordListsMap => {
+		const wordLists = Object.values(wordListsMap);
+		wordLists.forEach(wordList => {
+			if ("ref" in wordList) {
+				const ref = wordList.ref;
+				wordList.words = wordListsMap[ref].words;
+				delete wordList.ref;
+			}
+		});
+		return wordListsMap;
+	};
+
+	const wrapTuples = tuples => "<dl>" + tuples.join("") + "</dl>";
+
+	const buildTuple = (name, value) => "<dt>" + name + "</dt><dd>" + value + "</dd>";
+
+	const buildListContentsHTML = wordList => {
+		const tuples = [];
+		tuples.push(buildTuple("Title", wordList.title));
+		tuples.push(buildTuple("Help text", wordList.help || "<em>No help text available</em>"));
+		tuples.push(buildTuple("Words", wordList.words.join(", ")));
+		return wrapTuples(tuples);
+	};
+
+	const buildListsHTML = wordListsMap => {
+		const tuples = [];
+		Object.entries(wordListsMap).forEach(entry => {
+			const [name, list] = entry;
+			tuples.push(buildTuple(name, buildListContentsHTML(list)));
+		});
+		return wrapTuples(tuples);
+	};
+
+	fileFetch('./words.json').then(response => {
+		const responseJSON = JSON.parse(response.responseText);
+		const wordListsMap = dereferenceWords(responseJSON);
+		document.getElementsByTagName("body")[0].innerHTML = buildListsHTML(wordListsMap);
+	});
+
+</script>
