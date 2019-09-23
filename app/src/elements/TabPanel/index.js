@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Text = (props) => {
+const TabPanel = (props) => {
 	return props.children;
 }
 
-export default Text;
+export default TabPanel;
