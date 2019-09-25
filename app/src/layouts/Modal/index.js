@@ -142,7 +142,9 @@ function Modal(props) {
 		<div className={initialClassNames} style={ {background} } ref={div => {modalDiv = div; if (div && fade) fadeModal(div, open);} }>
 			<div className={styles["modal-content"]}>
 				<ModalHeader title={title} closeHandler={closeHandler}/>
-				{ children }
+				<div>
+					{ children }
+				</div>
 				{ modalFooter }
 			</div>
 		</div>

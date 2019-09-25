@@ -1,16 +1,16 @@
 import React from 'react';
 import Select from 'react-select';
 
-import Story from '../Story';
-import TabLayout from '../TabLayout';
-
-import EmailModal from '../../components/EmailModal';
-import StoryPanel from '../../components/StoryPanel';
-import WordsPanel from '../../components/WordsPanel';
+import EmailModal from '../EmailModal';
+import StoryPanel from '../StoryPanel';
+import WordsPanel from '../WordsPanel';
 
 import Copyright from '../../elements/Copyright';
 import Tab from '../../elements/Tab';
 import Title from '../../elements/Title';
+
+import Story from '../../layouts/Story';
+import TabLayout from '../../layouts/TabLayout';
 
 const Application = (props) => {
 	return (
