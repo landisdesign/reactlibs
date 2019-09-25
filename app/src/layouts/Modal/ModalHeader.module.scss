@@ -1,0 +1,33 @@
+@import '../../common/_variables';
+
+.modalHeader {
+	display: grid;
+	grid-auto-flow: column;
+	align-items: center;
+	margin: -.5rem -.5rem .5rem;
+	padding: .2rem .5rem;
+	border-bottom: 1px solid $color-accent-light;
+	border-radius: .5rem .5rem 0 0;
+	background-color: $color-accent-pale;
+	font-weight: $font-weight-bold;
+	font-family: $font-sans-serif;
+}
+
+@media #{$media-not-phone} {
+	.modalHeader {
+		font-size: map-get($font-size-normal, "desktop");
+	}
+}
+
+@media #{$media-phone} {
+	.modalHeader {
+		font-size: map-get($font-size-normal, "phone");
+	}
+}
+
+.close {
+	padding: .1rem;
+	font-size: .4em;
+	text-align: right;
+	cursor: pointer;
+}

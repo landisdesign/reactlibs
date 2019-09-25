@@ -5,7 +5,7 @@ import './App.css';
 
 function App() {
 
-	const loading = false;
+	const loading = true;
 	return (
 		loading ? <Landing/> : <Application/>
 	);

@@ -1,0 +1,22 @@
+@import '../common/_variables';
+
+.icon {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	stroke-width: 0;
+	stroke: $color-accent-dark;
+	fill: $color-accent-dark;
+}
+
+.actionable {
+	&:hover {
+		stroke: $color-highlight;
+		fill: $color-highlight;
+	}
+
+	&:active {
+		stroke: $color-active;
+		fill: $color-active;
+	}
+}

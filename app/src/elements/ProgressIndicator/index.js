@@ -1,7 +1,19 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function ProgressIndicator() {
-	return null;
+const ProgressIndicator = (props) => {
+	return (
+		<div>
+		</div>
+	);
 }
+
+ProgressIndicator.propTypes = {
+	current: PropTypes.number.isRequired,
+	maximum: PropTypes.number.isRequired,
+	containerColor: PropTypes.string,
+	backgroundColor: PropTypes.string,
+	fillColor: PropTypes.string
+};
 
 export default ProgressIndicator;

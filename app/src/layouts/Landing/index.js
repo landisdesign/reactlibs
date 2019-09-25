@@ -7,11 +7,10 @@ import Image from '../../elements/Image';
 import ProgressIndicator from '../../elements/ProgressIndicator';
 import Title from '../../elements/Title';
 
-const Landing = () => {
-
+function Landing() {
 
 	return (
-		<Modal>
+		<Modal open={true} fade={true} close={true} title="Test">
 			<Image/>
 			<Title>MadLibs, React style</Title>
 			<ProgressIndicator/>

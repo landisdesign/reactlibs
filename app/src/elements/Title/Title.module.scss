@@ -1,0 +1,27 @@
+@import '../../common/_variables';
+
+.title {
+	margin: 1em 0 .25em;
+	padding: 0;
+	font-weight: $font-weight-bold;
+	line-height: $line-height;
+	font-family: $font-sans-serif;
+}
+
+@media #{$media-desktop} {
+	.title {
+		font-size:  map-get($font-size-title, "desktop");
+	}
+}
+
+@media #{$media-tablet} {
+	.title {
+		font-size:  map-get($font-size-title, "tablet");
+	}
+}
+
+@media #{$media-phone} {
+	.title {
+		font-size:  map-get($font-size-title, "phone");
+	}
+}

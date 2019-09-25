@@ -1,7 +1,10 @@
 import React from 'react';
+import styles from './Copyright.module.scss';
 
-function Copyright() {
-	return null;
-}
+const Copyright = () => (
+	<div className={styles.copyright}>
+		Copyright &copy;{ ( new Date() ).getFullYear() } Michael Landis
+	</div>
+);
 
 export default Copyright;
