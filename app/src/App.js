@@ -1,13 +1,15 @@
 import React from 'react';
+
 import Landing from './components/Landing';
 import Application from './components/Application';
 import './App.css';
 
 function App() {
-
-	const loading = true;
 	return (
-		loading ? <Landing/> : <Application/>
+		<>
+			<Landing/>
+			<Application/>
+		</>
 	);
 }
 

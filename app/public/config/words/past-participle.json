@@ -1,0 +1,17 @@
+{
+	"id": "past participle",
+	"title": "Past participle",
+	"help": "The verb form used to describe things that happened in the past, usually ending in &ldquo;ed,&rdquo; such as &ldquo;it had <dfn>ended</dfn>&rdquo;",
+	"words": [
+		"lived", "loved", "grown", "thought", "flown", "thrown", "stretched", "climbed", "shrunk", "signed",
+		"cried", "crawled", "written", "read", "painted", "drunk", "drained", "pirouetted", "danced", "strutted",
+		"trembled", "built", "walked", "run", "screamed", "smelled", "swallowed", "eaten", "absorbed", "rejected",
+		"tossed", "catapulted", "quenched", "guzzled", "trashed", "flashed", "pondered", "disturbed", "scratched", "flailed",
+		"created", "broken", "breathed", "blown", "split", "stopped", "gone", "bought", "apologized", "contemplated",
+		"squealed", "dramatized", "solved", "chucked", "hurled", "slid", "straddled", "crushed", "collapsed", "ordered",
+		"analyzed", "dictated", "freaked", "braked", "skedaddled", "dreamt", "parked", "driven", "careened", "landed",
+		"bombed", "partied", "simplified", "chewed", "foraged", "thrashed", "played", "stumbled", "bragged", "eulogized",
+		"fabricated", "distorted", "trampled", "pointed", "pressed", "folded", "ballooned", "polished", "magnified", "diminished",
+		"combed", "smeared", "slammed", "swum", "surfed", "elevated", "aggravated", "spritzed", "creased", "finished"
+	]
+}

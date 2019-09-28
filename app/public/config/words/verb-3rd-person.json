@@ -1,0 +1,17 @@
+{
+	"id": "verb (3rd person)",
+	"title": "Third-person verb",
+	"help": "The verb form for describing what someone else is doing, such as &ldquo;he <dfn>does</dfn>&rdquo;",
+	"words": [
+		"lives", "loves", "grows", "thinks", "flies", "throws", "stretches", "climbs", "shrinks", "signs",
+		"cries", "crawls", "writes", "reads", "paints", "drinks", "drains", "pirouettes", "dances", "struts",
+		"trembles", "builds", "walks", "runs", "screams", "smells", "swallows", "eats", "absorbs", "rejects",
+		"tosses", "catapults", "quenches", "guzzles", "trashes", "flashes", "ponders", "disturbs", "scratches", "flails",
+		"creates", "breaks", "breathes", "blows", "splits", "stops", "goes", "buys", "apologizes", "contemplates",
+		"squeals", "dramatizes", "solves", "chucks", "hurls", "slides", "straddles", "crushes", "collapses", "orders",
+		"analyzes", "dictates", "freaks", "brakes", "skedaddles", "dreams", "parks", "drives", "careens", "lands",
+		"bombs", "parties", "simplifies", "chews", "forages", "thrashes", "plays", "stumbles", "brags", "eulogizes",
+		"fabricates", "distorts", "tramples", "points", "presses", "folds", "balloons", "polishes", "magnifies", "diminishes",
+		"combs", "smears", "slams", "swims", "surfs", "elevates", "aggravates", "spritzes", "creases", "finishes"
+	]
+}

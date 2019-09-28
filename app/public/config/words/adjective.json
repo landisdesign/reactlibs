@@ -1,0 +1,16 @@
+{
+	"id": "adjective",
+	"title": "Adjective",
+	"words": [
+		"burnt", "happy", "huge", "tiny", "small", "round", "square", "pasty", "quiet", "loud",
+		"smart", "silly", "skittish", "excellent", "active", "passive", "quirky", "mild", "testy", "quick",
+		"feisty", "immense", "questionable", "dusty", "smelly", "sweet", "professional", "rude", "amateur", "cynical",
+		"critical", "courteous", "supportive", "moldy", "dramatic", "squirrelly", "typical", "random", "disheveled", "dapper",
+		"painful", "tender", "calloused", "rhapsodic", "incredible", "bumpy", "smooth", "slim", "sluggish", "staticky",
+		"sickly", "vibrant", "pastel", "winged", "fast", "slow", "short", "tall", "cold", "hot",
+		"free", "expensive", "cheap", "worthy", "worthless", "shadowy", "bright", "hazy", "clear", "shiny",
+		"lustrous", "shady", "infinite", "breathless", "fulfilling", "symbiotic", "effervescent", "climactic", "sibilant", "constructive",
+		"absent", "aberrant", "ridiculous", "inspiring", "creative", "destructive", "inflationary", "recessionary", "stable", "certain",
+		"structural", "soothing", "useful", "useless", "plentiful", "scarce", "rabid", "dim", "beautiful", "practical"
+ 	]
+}

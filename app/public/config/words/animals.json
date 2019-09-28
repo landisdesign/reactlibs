@@ -1,0 +1,10 @@
+{
+	"id": "animals",
+	"title": "Animals (plural)",
+	"words": [
+		"bees", "baboons", "orangutangs", "elephants", "ants", "rhinoceroses", "hippopotami", "dogs", "cats", "rats",
+		"horses", "birds", "pelicans", "eagles", "hawks", "rabbits", "foxes", "cows", "pigeons", "bears",
+		"llamas", "camels", "monkeys", "seals", "whales", "dolphins", "fishes", "sharks", "crabs", "walruses",
+		"tigers", "lions", "giraffes", "zebras", "alligators", "crocodiles", "wasps", "ducks", "geese", "termites"
+	]
+}

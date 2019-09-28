@@ -1,0 +1,7 @@
+{
+	"id": "color",
+	"title": "Color",
+	"words": [
+		"red", "blue", "green", "yellow", "white", "black", "brown", "orange", "purple", "grey"
+	]
+}

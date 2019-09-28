@@ -1,0 +1,8 @@
+{
+	"id": "attitude",
+	"title": "Attitude",
+	"help": "The noun form, such as <dfn>happiness</dfn>",
+	"words": [
+		"happiness", "sadness", "tiredness", "ennui", "boredom", "loquaciousness", "anger", "sorrow", "silliness", "attentiveness"
+	]
+}

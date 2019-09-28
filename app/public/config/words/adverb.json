@@ -1,0 +1,16 @@
+{
+	"id": "adverb",
+	"title": "Adverb",
+	"words": [
+		"happily", "sadly", "merrily", "gladly", "heavily", "lightly", "quickly", "slowly", "easily", "hardly",
+		"queasily", "sprightly", "painfully", "delightedly", "morosely", "loosely", "tightly", "effortlessly", "difficultly", "adeptly",
+		"adroitly", "clumsily", "swiftly", "speedily", "carefully", "recklessly", "aimlessly", "pithily", "mirthlessly", "mirthfully",
+		"stickily", "truthfully", "evasively", "aptly", "horribly", "daintily", "questionably", "dutifully", "adequately", "disturbingly",
+		"effervescently", "smartly", "quietly", "loudly", "stably", "giftedly", "creatively", "destructively", "symbiotically", "stupendously",
+		"serendipitously", "coincidentally", "shiftily", "spiritually", "ridiculously", "spasmodically", "rhythmically", "periodically", "chaotically", "flashily",
+		"greasily", "icily", "archly", "hotly", "glacially", "spiffily", "strategically", "astronomically", "precipitously", "facetiously", 
+		"strangely", "funnily", "abstractly", "concretely", "extraordinarily", "bluely", "testily", "querulously", "radically", "sharply",
+		"smoothly", "paranormally", "normally", "abnormally", "abruptly", "slothfully", "statically", "crazily", "soberly", "hazily",
+		"freely", "simply", "confusedly", "theoretically", "therapeutically", "physically", "wickedly", "nastily", "beatifically", "tersely"
+	]
+}

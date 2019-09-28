@@ -26,6 +26,9 @@ ProgressIndicator.propTypes = {
 	fillColor: PropTypes.string
 };
 
+/**
+	A progress bar, showing the percentage completion of a task
+ */
 function ProgressIndicator(props) {
 
 	const buildBackground = ({current, max, backgroundColor = '#FFF', fillColor = '#369'}) => {

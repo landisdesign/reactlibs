@@ -1,0 +1,7 @@
+{
+	"id": "armor",
+	"title": "Piece of armor",
+	"words": [
+		"helmet", "cuirass", "gauntlet", "greave", "shield", "brace", "pauldron", "boot"
+	]
+}

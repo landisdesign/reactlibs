@@ -1,0 +1,16 @@
+{
+	"id": "nouns",
+	"title": "Plural noun",
+	"words": [
+		"beds", "chairs", "couches", "sofas", "tables", "ovens", "sinks", "stoves", "desks", "windows",
+		"doors", "rugs", "floors", "ceilings", "houses", "cars", "trucks", "airplanes", "boats", "trains",
+		"spaceships", "shoes", "shirts", "pants", "shorts", "hats", "dresses", "jackets", "belts", "trees",
+		"bushes", "grasses", "roads", "skies", "people", "books", "pencils", "knives", "forks", "spoons",
+		"plates", "napkins", "pens", "staplers", "stoplights", "computers", "phones", "rainbows", "clouds", "lightsabers",
+		"wheels", "parks", "closets", "birds", "animals", "files", "planners", "suits", "lightposts", "runways",
+		"banks", "supermarkets", "offices", "buildings", "cups", "trash cans", "buses", "oceans", "planets", "stars",
+		"strollers", "frappuccinos", "rings", "wallets", "watches", "clocks", "pianos", "flutes", "violins", "benches",
+		"mountains", "hills", "valleys", "rivers", "lakes", "seas", "airports", "towns", "balls", "cards",
+		"cities", "daggers", "wands", "skis", "skateboards", "sticks", "boards", "pans", "shops", "mugs"
+	]
+}

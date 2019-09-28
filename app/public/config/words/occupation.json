@@ -1,0 +1,8 @@
+{
+	"id": "occupation",
+	"title": "Occupation",
+	"words": [
+		"doctor", "lawyer", "accountant", "contractor", "assistant", "developer", "architect", "hermit", "fireman", "police officer",
+		"builder", "carpenter", "cashier", "grocer", "therapist", "singer", "dancer", "actor", "artist", "politician"
+	]
+}

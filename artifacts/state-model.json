@@ -1,0 +1,42 @@
+{
+	"config": {
+		"loading": false,
+		"loaded": false,
+		"wordSources": [
+			{
+				"data": {
+					"id": "",
+					"label": "",
+					"help": "",
+					"words": [""],
+					"ref": ""
+				},
+				"loaded": false
+			}
+		],
+		"storySource": {
+			"loaded": false
+		},
+	},
+	"words": {
+		"id": {
+			"label": "",
+			"help": null,
+			"words": [""]
+		}
+	},
+	"stories": [
+		{
+			"id": "",
+			"title": "",
+			"fields": [""],
+			"template": ""
+		}
+	],
+	"entries": [
+		[""]
+	],
+	"ui": {
+		"error": {}
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"id": "imperative",
+	"title": "Imperative verb",
+	"help": "The verb form used to direct someone, as in &ldquo;<dfn>do</dfn> this&rdquo;",
+	"words": [
+		"live", "love", "grow", "think", "fly", "throw", "stretch", "climb", "shrink", "sign",
+		"cry", "crawl", "write", "read", "paint", "drink", "drain", "pirouette", "dance", "strut",
+		"tremble", "build", "walk", "run", "scream", "smell", "swallow", "eat", "absorb", "reject",
+		"toss", "catapult", "quench", "guzzle", "trash", "flash", "ponder", "disturb", "scratch", "flail",
+		"create", "break", "breathe", "blow", "split", "stop", "go", "buy", "apologize", "contemplate",
+		"squeal", "dramatize", "solve", "chuck", "hurl", "slide", "straddle", "crush", "collapse", "order",
+		"analyze", "dictate", "freak", "brake", "skedaddle", "dream", "park", "drive", "careen", "land",
+		"bomb", "party", "simplify", "chew", "forage", "thrash", "play", "stumble", "brag", "eulogize",
+		"fabricate", "distort", "trample", "point", "press", "fold", "balloon", "polish", "magnify", "diminish",
+		"comb", "smear", "slam", "swim", "surf", "elevate", "aggravate", "spritz", "crease", "finish"
+	]
+}

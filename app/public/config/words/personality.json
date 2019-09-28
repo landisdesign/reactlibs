@@ -1,0 +1,10 @@
+{
+	"id": "personality",
+	"title": "Famous person",
+	"words": [
+		"Jimmy Carter", "Luke Skywalker", "Ronald Reagan", "Kublai Kahn", "Nelson Mandela",
+		"Margaret Thatcher", "J.K. Rowling", "Winston Churchill", "Steve Jobs", "Stevie Nicks",
+		"Tupac", "Paul McCartney", "Samuel Jackson", "Keanu Reeves", "Gandalf",
+		"Frodo Baggins", "Han Solo", "David Bowie", "Bruce Lee"
+	]
+}

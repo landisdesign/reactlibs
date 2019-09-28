@@ -1,0 +1,8 @@
+{
+	"id": "body part",
+	"title": "Body part",
+	"words": [
+		"arm", "leg", "neck", "head", "ear", "hand", "foot", "finger", "thumb", "toe",
+		"elbow", "knee", "hip", "waist", "nose", "mouth", "eye", "chest", "back", "heart"
+	]
+}

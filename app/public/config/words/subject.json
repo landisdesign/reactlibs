@@ -1,0 +1,9 @@
+{
+	"id": "subject",
+	"title": "School subject",
+	"help": "High school or college",
+	"words": [
+		"law", "math", "biology", "chemistry", "literature",
+		"philosophy", "medicing", "computer science", "history", "anthropology"
+	]
+}
