@@ -1,27 +1,37 @@
 @import '../../common/_variables';
 
-.title {
-	margin: .25em 0;
+%basic-props {
 	padding: 0;
 	font-weight: $font-weight-bold;
-	line-height: $line-height;
 	font-family: $font-sans-serif;
 }
 
+.title {
+	@extend %basic-props;
+	margin: .25em 0;
+	line-height: $line-height;
+}
+
+.title-packed {
+	@extend %basic-props;
+	margin: 0;
+	line-height: 1;
+}
+
 @media #{$media-desktop} {
-	.title {
+	%basic-props {
 		font-size: map-get($font-size-title, "desktop");
 	}
 }
 
 @media #{$media-tablet} {
-	.title {
+	%basic-props {
 		font-size: map-get($font-size-title, "tablet");
 	}
 }
 
 @media #{$media-phone} {
-	.title {
+	%basic-props {
 		font-size: map-get($font-size-title, "phone");
 	}
 }

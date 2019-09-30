@@ -1,8 +1,11 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useRouteMatch, Redirect } from 'react-router-dom';
 
-import { objectEquals, sleep } from '../../common/common';
-import { fetchConfig, startApplication } from '../../reducers/config'
+import { sleep } from '../../common/common';
+import { fetchConfig, acknowledgeConfigCompletion } from '../../reducers/config';
+import { loadStories } from '../../reducers/stories';
+import { loadWords } from '../../reducers/words';
 
 import Modal from '../../layouts/Modal';
 
@@ -14,47 +17,57 @@ import Title from '../../elements/Title';
 function extractData({config}) {
 
 	const progress = config.wordSources.reduce(
-		({current, total}, {loaded}) => (
-			{
-				current: loaded ? current++ : current,
-				total: total++
-			}
-		), (
-			{
-				current: config.storySource.loaded ? 1 : 0,
-				total: 1
-			}
-		)
+		({current, total}, {loaded}) => ({
+				current: loaded ? ++current : current,
+				total: ++total
+		}), ({
+			current: config.storySource.loaded ? 1 : 0,
+			total: 1
+		})
 	);
 
 	return {
 		loading: config.loading,
 		loaded: config.loaded,
-		...progress
+		...progress,
+		stories: config.storySource.stories,
+		wordSources: config.wordSources
 	}
+}
+
+// We don't care about the state of stories and wordSource, since we need both and they won't be available until current == total
+function stateUnchanged(a, b) {
+	const props = ["loading", "loaded", "current", "total"];
+	return props.every(prop => a[prop] === b[prop]);
 }
 
 function Landing() {
 
 	const
-		{loaded, loading, current, total} = useSelector(extractData, objectEquals),
+		{loaded, loading, current, total, stories, wordSources} = useSelector(extractData, stateUnchanged),
 		fresh = !loaded && !loading, // app just loaded into page. No config yet
-		complete = loaded && loading, // progress is complete, trigger fade, wait, and dispatch completion message
+		complete = loaded && loading, // progress is complete, trigger fade, wait, and dispatch acknowledgement message
+		redirect = useRouteMatch({path: "/", exact: true}) && loaded && !loading, // fade is complete, time to redirect
 		open = !loaded, // show landing for as long as the config isn't loaded
 		dispatch = useDispatch()
 	;
 
 	if (fresh) {
-		dispatch(fetchConfig("/config/config.json"));
+		dispatch(fetchConfig( {url: "/development/madlibs/config/config.json", minDelay: 3000} ));
 	}
 
 	if (complete) {
-		sleep(5000).then( () => dispatch(startApplication()) );
+		dispatch(loadStories(stories));
+		dispatch(loadWords(wordSources));
+		dispatch(acknowledgeConfigCompletion(600));
 	}
 
-	return (
+console.log(current + " of " + total);
+	return redirect ? (
+		<Redirect to="/stories"/>
+	) : (
 		<Modal open={open} fade={complete} background="#FFF">
-			<Image src="./logo.png" align="center"/>
+			<Image src="/development/madlibs/logo.png" align="center"/>
 			<Title>MadLibs, React style</Title>
 			<ProgressIndicator current={current} max={total} width="80%" backgroundColor="#DEF" />
 			<Copyright/>

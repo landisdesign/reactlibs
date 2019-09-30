@@ -10,13 +10,20 @@ import styles from './Modal.module.scss';
 
 Modal.propTypes = {
 	/**
-		Whether or not modal should be open on initial render. Closed (false) by default.
+		Whether or not modal should be open when rendered. Closed (false) by default.
 	 */
 	open: PropTypes.bool,
 	/**
-		Whether or not modal should fade in or out into that initial render. Does not fade (false) by default.
+		Defines the fade behavior for how the modal is rendered. By default there is no fade effect and the modal is simply visible or not based upon the "open" property.
+
+		If set to {true}, the modal will fade into the state provided by "open". If "open" is {true}, the modal will appear to fade into visibility. If "open" is {false}, it will fade out and disappear.
+
+		If set to a function, the modal will fade, but once the fade completes, the function will be called, with the value of "open" passed as the only argument.
 	 */
-	fade: PropTypes.bool,
+	fade:  PropTypes.oneOfType([
+		PropTypes.bool,
+		PropTypes.func
+	]),
 	/**
 		A string representing the CSS 'background' property for the modal mask. By default the mask is 65% black.
 	 */
@@ -67,7 +74,7 @@ Modal.propTypes = {
  */
 function Modal(props) {
 
-	async function fadeModal(div, toOpen) {
+	async function fadeModal(div, toOpen, fade) {
 		// Open class required to provide display grid (display cannot be transitioned)
 		const transitionClassNames = buildClassNames(styles, chooseList(toOpen, ["opening", "transitioning"], ["closing"], ["modal", "open"]));
 		const completionClassNames = buildClassNames(styles, chooseList(toOpen, ["opening"], ["closing", "transitioning"], ["modal", "open"]));
@@ -75,6 +82,10 @@ function Modal(props) {
 		div.className = transitionClassNames;
 		await sleep(1);
 		div.className = completionClassNames;
+		if (typeof fade === "function") {
+			await sleep(toOpen ? 600 : 650);
+			fade(toOpen);
+		}
 	};
 
 	function buildFooter(defaultButton, otherButtons, closeHandler) {
@@ -139,7 +150,7 @@ function Modal(props) {
 	const modalFooter = buildFooter(defaultButton, otherButtons, closeHandler);
  
 	return (
-		<div className={initialClassNames} style={ {background} } ref={div => {modalDiv = div; if (div && fade) fadeModal(div, open);} }>
+		<div className={initialClassNames} style={ {background} } ref={div => {modalDiv = div; if (div && fade) fadeModal(div, open, fade);} }>
 			<div className={styles["modal-content"]}>
 				<ModalHeader title={title} closeHandler={closeHandler}/>
 				<div>

@@ -1,0 +1,43 @@
+@import '../../common/_variables';
+
+.container {
+	height: 100%;
+}
+
+.panelHolder {
+	border: 1px solid $color-accent-dark;
+}
+
+@media #{$media-desktop} {
+	.container {
+	}
+
+	.tabHolder {
+		display: none;
+	}
+
+	.panelHolder {
+		height: calc(100% - 1rem);
+		padding: .5rem;
+		display: grid;
+		grid: "master detail" / 35% 65%;
+	}
+
+	.masterPanel {
+		grid-area: master;
+		border-right: 1px solid $color-accent-light;
+		padding-right: .5rem;
+	}
+
+	.detailPanel {
+		grid-area: detail;
+	}
+}
+
+.tab {
+
+}
+
+.tabs {
+
+}

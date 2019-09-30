@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
 import WordRow from '../WordRow';
 
@@ -8,7 +9,7 @@ import ButtonGroup from '../../elements/forms/ButtonGroup';
 import TabPanel from '../../elements/TabPanel';
 import Text from '../../elements/Text';
 
-const WordsPanel = (props) => {
+function WordsPanel(props) {
 
 	const story = props.story;
 
