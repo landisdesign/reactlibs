@@ -1,9 +1,15 @@
-import combineReducers from 'redux';
+import { combineReducers } from 'redux';
 
 import { configReducer } from './config';
+import { storiesReducer } from './stories';
+import { wordsReducer } from './words';
+import { uiReducer } from './ui';
 
-function chainReducers(...reducers) {
-	return (state, action) =>  reducers.reduce(reducer => reducer(state, action), state);
-}
+const combinedReducers = {
+	config: configReducer,
+	stories: storiesReducer,
+	words: wordsReducer,
+	ui: uiReducer
+};
 
-export const reducer = configReducer;
+export const reducer = combineReducers(combinedReducers);

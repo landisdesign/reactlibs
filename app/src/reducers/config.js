@@ -8,28 +8,32 @@
 
 import 'whatwg-fetch';
 
+import { sleep } from '../common/common.js';
+
 const reducerPrefix = "CONFIG_";
-const LOAD_CONFIG = reducerPrefix + "LOAD_CONFIG";
+const INIT_CONFIG = reducerPrefix + "INIT_CONFIG";
 const LOAD_STORIES = reducerPrefix + "LOAD_STORIES";
 const LOAD_WORD_LIST = reducerPrefix + "LOAD_WORD_LIST";
 const RECONCILE_CONFIG = reducerPrefix + "RECONCILE_CONFIG";
 const START_APPLICATION = reducerPrefix + "START_APPLICATION";
 
 /*
- *	Synchronous actions
+ *	Synchronous actions. All of them are called internally by the thunks, to
+ *	update the UI as fetchConfig manages the config retrieval and creation,
+ *	and to update the state to reflect the UI's splash page completion.
  */
 
-function loadConfig(config) {
+function initConfig(config) {
 	return {
-		type: LOAD_CONFIG,
+		type: INIT_CONFIG,
 		config
 	};
 }
 
-function loadStories(stories) {
+function loadStories(storyData) {
 	return {
 		type: LOAD_STORIES,
-		stories
+		storyData
 	};
 }
 
@@ -54,13 +58,24 @@ function startApplication() {
 }
 
 /*
- * Asynchronous actions
+ *	Asynchronous actions. These are the only actions available outside the module.
  */
-function fetchConfig(configUrl) {
 
-	const jsonHeader = new Headers({
-		"Accept": "application/json, text/plain"
-	});
+/**
+ *	Load the config file, then load the word and story files identified by the
+ *	config. fetchConfig dispatches the above synchronous actions to update the
+ *	progress UI and inform the UI when everything has loaded. The start and
+ *	minDelay fields dictate how long the startup process should take for the
+ *	splash screen to be presented.
+ */
+function fetchConfig( {url: configUrl, minDelay} ) {
+
+	const requestOptions = {
+		headers: new Headers({
+			"Accept": "application/json, text/plain"
+		}),
+		mode: "same-origin"
+	};
 
 	function checkStatus(response) {
 		if (response.ok) {
@@ -74,33 +89,37 @@ function fetchConfig(configUrl) {
 	}
 
 	function fetchWords(wordDataUrl, index, dispatch) {
-		return fetch(wordDataUrl, jsonHeader).then(async response => {
+		return fetch(wordDataUrl, requestOptions).then(async response => {
 			checkStatus(response);
 			const wordData = await response.json();
-console.log("Dispatching for " + wordDataUrl);
 			dispatch(loadWordList(wordData, index));
 		});
 	}
 
 	function fetchStories(storyListUrl, dispatch) {
-		return fetch(storyListUrl, jsonHeader).then(async response => {
+		return fetch(storyListUrl, requestOptions).then(async response => {
 			checkStatus(response);
 			const storyData = await response.json();
-console.log("Dispatching for " + storyListUrl);
 			dispatch(loadStories(storyData));
 		});
 	}
 
 	return async function(dispatch) {
 		try {
-			let response = await fetch(configUrl, jsonHeader);
+			const activationTime = minDelay + Date.now();
+			const response = await fetch(configUrl, requestOptions);
 			checkStatus(response);
 			const config = await response.json();
-			dispatch(loadConfig(config));
+			dispatch(initConfig(config));
 
 			const fetches = config.wordSources.map((url, index) => fetchWords(url, index, dispatch));
 			fetches.push(fetchStories(config.storySource, dispatch));
-			Promise.all(fetches).then(() => {
+
+			Promise.all(fetches).then(async () => {
+				const now = Date.now();
+				if (now < activationTime) {
+					await sleep(activationTime - now);
+				}
 				dispatch(reconcileConfig());
 			});
 		}
@@ -111,124 +130,99 @@ console.log("Dispatching for " + storyListUrl);
 				console.error(e.response.body);
 			}
 		}
-/*
-
-		fetch(configUrl, jsonHeader).then(response => {
-			checkStatus(response);
-			const config = response.json();
-			dispatch(loadConfig(config));
-			const fetches = config.wordSources.map((url, index) => fetchWords(url, index, dispatch));
-			fetches.push(fetchStories(config.storySource, dispatch));
-			Promise.all(fetches).then(() => {
-				dispatch(reconcileConfig());
-			});
-		}).catch(error => {
-			let message = error.message;
-			if ("response" in error) {
-				message += "\nurl: " + error.response.url;
-			}
-			throw error;
-		});
-*/	};
+	};
 }
 
-/*
+/**
+ *	Signal that the UI has completed the landing page presentation.
+ */
+function acknowledgeConfigCompletion(delay = 0) {
+	return async function(dispatch) {
+		await sleep(delay);
+		dispatch(startApplication());
+	}
+}
+
+
+/**
+ *	The initial state structure handled by config.js
+ */
+const initialConfig = {
+	loading: false,
+	loaded: false,
+	wordSources: [],
+	storySource: {
+		loaded: false
+	}
+};
+
+/**
  * Reducer
  *
  * Reminder: This retrieves and returns the entire state, not just a "config" slice.
  */
+function configReducer(config = initialConfig, action) {
 
-const initialState = {
-	config: {
-		loading: false,
-		loaded: false,
-		wordSources: [],
-		storySource: {
-			loaded: false
-		}
-	},
-	words: {},
-	stories: [],
-	entries: [],
-	ui: {}
-};
+	function cloneConfig(config) {
 
-function configReducer(state = initialState, action) {
-
-	function createConfig(config, action) {
-		config.loaded = false;
-		config.loading = true;
-		config.wordSources = action.config.wordSources.map(url => ( {url, loaded: false} ) );
-		config.storySource = {url: action.config.storySource, loaded: false};
-	}
-
-	function updateWordList(config, action) {
-		config.wordSources = config.wordSources.map((x, index) => (index == action.index ? {data: action.wordList, loaded: true} : x));
-	}
-
-	function updateStorySource(state, action) {
-		state.config.storySource = {loaded: true};
-		state.stories = [...action.stories];
-	}
-
-	function finishConfig(state) {
-		const {wordMap, referrers} = state.config.wordSources.reduce((acc, {data: word}) => {
-			acc.wordMap[word.id] = word;
-			if ("ref" in word) acc.referrers.push(word.id);
-			return acc;
-		}, {wordMap: {}, referrers: []});
-
-		if (referrers.length) {
-
-			referrers.forEach(id => {
-				const word = {...wordMap[id]};
-				const refedWord = wordMap[word.ref];
-				word.words = refedWord.words;
-				delete word.ref;
-				wordMap[id] = word;
-			});
-
-			state.config.wordSources = state.config.wordSources.map(( {data: {id}} ) => wordMap[id]);
+		function cloneWordList(wordList) {
+			const newList = {...wordList};
+			if ("words" in wordList) {
+				newList.words = [...wordList.words];
+			}
+			return newList;
 		}
 
-		state.words = wordMap;
-		state.config.loading = true;
-		state.config.loaded = true;
+		return {
+			...config,
+			wordSources: config.wordSources.map(cloneWordList),
+			storySource: {...config.storySource}
+		};
 	}
-
-	function startApp(state) {
-		state.config.loading = false;
-		state.config.loaded = true;
-	}
-
-	const newConfig = Object.assign({}, state.config);
-	const newState = Object.assign({}, state, {config: newConfig});
 
 	switch (action.type) {
-		case LOAD_CONFIG:
-			createConfig(newConfig, action);
-			return newState;
+		case INIT_CONFIG:
+			const {activationTime, wordSources, storySource} = action.config;
+			return {
+				loading: true,
+				loaded: false,
+				activationTime,
+				wordSources: wordSources.map(url => ({url, loaded: false}) ),
+				storySource: {url: storySource, loaded: false}
+			};
 		case LOAD_WORD_LIST:
-			updateWordList(newConfig, action);
-			return newState;
+			const {index, wordList} = action;
+			return cloneConfig({
+				...config,
+				wordSources: config.wordSources.map( (source, i) => {
+					return i === index ? {...wordList, loaded: true} : source; 
+				})
+			});
 		case LOAD_STORIES:
-			updateStorySource(newState, action);
-			return newState;
+			return cloneConfig({
+				...config,
+				storySource: {loaded: true, stories: [...action.storyData]}
+			});
 		case RECONCILE_CONFIG:
-			finishConfig(newState);
-			return newState;
+			return cloneConfig({
+				...config,
+				loading: true,
+				loaded: true
+			});
 		case START_APPLICATION:
-			startApp(newState);
-			return newState;
+			return cloneConfig({
+				...config,
+				loading: false,
+				loaded: true
+			});
 		default:
-			return state;
+			return config;
 	};
 }
 
-// Although there are a ton of synchronous action creators, they are all called by fetchConfig.
 // These three methods are the only ones relevant to other modules. Expose reluctantly!
 export {
 	fetchConfig,
-	startApplication,
+	acknowledgeConfigCompletion,
 	configReducer
 };
