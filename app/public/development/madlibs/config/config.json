@@ -1,0 +1,29 @@
+{
+	"wordSources": [
+		"/development/madlibs/config/words/adjective.json",
+		"/development/madlibs/config/words/adverb.json",
+		"/development/madlibs/config/words/animals.json",
+		"/development/madlibs/config/words/armor.json",
+		"/development/madlibs/config/words/attitude.json",
+		"/development/madlibs/config/words/body-part.json",
+		"/development/madlibs/config/words/bug.json",
+		"/development/madlibs/config/words/color.json",
+		"/development/madlibs/config/words/food.json",
+		"/development/madlibs/config/words/imperative.json",
+		"/development/madlibs/config/words/name.json",
+		"/development/madlibs/config/words/noun.json",
+		"/development/madlibs/config/words/nouns.json",
+		"/development/madlibs/config/words/number.json",
+		"/development/madlibs/config/words/occupation.json",
+		"/development/madlibs/config/words/past-participle.json",
+		"/development/madlibs/config/words/personality.json",
+		"/development/madlibs/config/words/present-participle.json",
+		"/development/madlibs/config/words/sound.json",
+		"/development/madlibs/config/words/subject.json",
+		"/development/madlibs/config/words/transitive.json",
+		"/development/madlibs/config/words/verb-3rd-person.json",
+		"/development/madlibs/config/words/verb-plural.json",
+		"/development/madlibs/config/words/weapons.json"
+	],
+	"storySource": "/development/madlibs/config/stories.json"
+}
