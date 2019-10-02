@@ -61,6 +61,7 @@
 		border: 1px solid $color-accent-dark;
 		border-radius: .5rem .5rem 0 0;
 		margin-right: .25rem;
+		font: $font-weight-bold map-get($font-size-normal, "phone") $font-sans-serif;
 		cursor: pointer;
 	}
 
