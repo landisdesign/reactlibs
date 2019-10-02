@@ -8,7 +8,8 @@
 
 import 'whatwg-fetch';
 
-import { sleep } from '../common/common.js';
+import { sleep } from '../common/common';
+import { initEntries } from './entries';
 
 const reducerPrefix = "CONFIG_";
 const INIT_CONFIG = reducerPrefix + "INIT_CONFIG";
@@ -101,6 +102,7 @@ function fetchConfig( {url: configUrl, minDelay} ) {
 			checkStatus(response);
 			const storyData = await response.json();
 			dispatch(loadStories(storyData));
+			dispatch(initEntries(storyData));
 		});
 	}
 

@@ -1,0 +1,51 @@
+@import '../../common/_variables';
+
+%container-common {
+	display: grid;
+	grid: "inputs" 1fr
+	      "buttons" auto;
+	row-gap: .5rem;
+	height: inherit;
+
+	.fields {
+		grid-area: inputs;
+	}
+
+	.buttons {
+		display: grid;
+		grid-template-columns: 1fr auto;
+		grid-auto-flow: column;
+		column-gap: .5rem;
+		padding-top: .5rem;
+		border-top: 1px solid $color-accent-light;
+		margin-right: .5rem;
+		direction: rtl;
+	}
+}
+
+.form {
+	height: inherit;
+	padding: 0;
+	margin: 0;
+}
+
+.container {
+	@extend %container-common;
+}
+
+.containerScrolling {
+	@extend %container-common;
+
+	.fields {
+		position: relative;
+
+		.scroller {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			overflow: auto;
+		}
+	}
+}

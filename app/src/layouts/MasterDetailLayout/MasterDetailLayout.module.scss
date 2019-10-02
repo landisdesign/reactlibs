@@ -17,20 +17,22 @@
 	}
 
 	.panelHolder {
-		height: calc(100% - 1rem);
-		padding: .5rem;
 		display: grid;
 		grid: "master detail" / 35% 65%;
+		column-gap: .5rem;
+		height: calc(100% - 1rem);
+		padding: .5rem;
 	}
 
 	.masterPanel {
 		grid-area: master;
+		height: 100%;
 		border-right: 1px solid $color-accent-light;
-		padding-right: .5rem;
 	}
 
 	.detailPanel {
 		grid-area: detail;
+		height: 100%;
 	}
 }
 

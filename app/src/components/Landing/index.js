@@ -62,7 +62,6 @@ function Landing() {
 		dispatch(acknowledgeConfigCompletion(600));
 	}
 
-console.log(current + " of " + total);
 	return redirect ? (
 		<Redirect to="/stories"/>
 	) : (

@@ -1,0 +1,66 @@
+@import '../../common/_variables.scss';
+
+.word-row {
+	margin-bottom: .5em;
+}
+
+.label-row {
+	margin-bottom: .3em;
+}
+
+@media #{$media-desktop} {
+	.word-row,
+	.input {
+		font-size: map-get($font-size-small, "desktop");
+	}
+}
+
+@media #{$media-tablet} {
+	.word-row {
+		font-size: map-get($font-size-small, "tablet");
+	}
+}
+
+@media #{$media-phone} {
+	.word-row {
+		font-size: map-get($font-size-small, "phone");
+	}
+}
+
+.label {
+	font-weight: $font-weight-bold;
+	font-family: $font-sans-serif;
+}
+
+%inputs {
+	box-sizing: border-box;
+	height: 2rem;
+	vertical-align: middle;
+}
+
+.input {
+	@extend %inputs;
+	width: calc(100% - 2.8rem);
+	padding-left: .25rem;
+	font-family: $font-serif;
+}
+
+.button {
+	@extend %inputs;
+	width: 2rem;
+	padding: 0;
+	border-radius: .25rem;
+	margin-left: .3rem;
+}
+
+.tooltip {
+	width: .85em;
+	height: .85em;
+	margin-left: .3em;
+	vertical-align: middle;
+}
+
+.refresh {
+	width: 1rem;
+	height: 1rem;
+}

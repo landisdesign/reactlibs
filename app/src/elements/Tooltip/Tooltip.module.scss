@@ -1,0 +1,23 @@
+@import '../../common/_variables';
+
+.content {
+	font-family: $font-sans-serif;
+}
+
+@media #{$media-desktop} {
+	.content {
+		font-size: map-get($font-size-small, "desktop");
+	}
+}
+
+@media #{$media-tablet} {
+	.content {
+		font-size: map-get($font-size-small, "tablet");
+	}
+}
+
+@media #{$media-phone} {
+	.content {
+		font-size: map-get($font-size-small, "phone");
+	}
+}

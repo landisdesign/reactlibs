@@ -10,7 +10,7 @@ const EmailModal = (props) => {
 
 	const confirmed = false;
 
-	return confirmed ? (
+	return null && confirmed ? (
 		<Modal title='Send link to story' default='Close'>
 			<Text type="story">
 				Your story has been sent to {props.email}.

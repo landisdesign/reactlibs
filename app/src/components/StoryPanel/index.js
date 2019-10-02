@@ -1,22 +1,19 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
-import Button from '../../elements/forms/Button';
-import ButtonGroup from '../../elements/forms/ButtonGroup';
-
-import TabPanel from '../../elements/TabPanel';
 import Text from '../../elements/Text';
 
-const StoryPanel = (props) => {
-	return props.result ? (
-		<TabPanel>
-			<Text type='story'>{ props.result }</Text>
-			<ButtonGroup>
-				<Button/>
-				<Button/>
-			</ButtonGroup>
-		</TabPanel>
-	) :
-	null;
+import FormLayout from '../../layouts/FormLayout';
+
+function StoryPanel() {
+
+	const story = useSelector(({ui: {output}}) => output);
+
+	return story ? (
+		<FormLayout scrolling={true}>
+			<Text type="story" html={story}/>
+		</FormLayout>
+	) : null;
 }
 
 export default StoryPanel;
