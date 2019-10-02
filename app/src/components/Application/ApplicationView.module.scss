@@ -1,7 +1,14 @@
+@import '../../common/_variables';
+
 .application {
 	display: grid;
 	grid-template-rows: auto auto auto 1fr auto;
 	box-sizing: border-box;
 	height: 100%;
 	padding: .5rem;
+}
+
+.selector {
+	position: relative;
+	z-index: 1000; // To go above the tabs in the MasterDetailPanel
 }

@@ -42,7 +42,7 @@ function ApplicationView({options, index, title, showStory}) {
 		<>
 			<div className={styles.application}>
 				<Title packed={true}>MadLibs, React style</Title>
-				<Select options={options} value={options[index]} onChange={value => onChange(value, history, dispatch)} isSearchable={false} />
+				<Select className={styles.selector} options={options} value={options[index]} onChange={value => onChange(value, history, dispatch)} isSearchable={false} />
 				<Title>{title}</Title>
 				<MasterDetailLayout id="story" masterLabel="Words" detailLabel="Story" highlightDetail={showStory} highlightDetailCallback={showDetail}>
 					<MasterPanel highlightDetail={showStory}>
