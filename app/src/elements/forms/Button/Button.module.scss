@@ -7,25 +7,25 @@
 	}
 }
 
-@media #{$media-tablet} {
+@media #{$media-not-desktop} {
 	.button,
 	.default {
 		font: $font-weight-bold map-get($font-size-small, "tablet") $font-sans-serif;
+		height: 2rem;
 	}
 }
 
-@media #{$media-phone} {
-	.button,
-	.default {
-		font: $font-weight-bold map-get($font-size-small, "phone") $font-sans-serif;
-	}
+
+%button-common {
+	border: 1px solid $color-accent-medium;
+	border-radius: .25rem;
+	white-space: nowrap;
+	cursor: pointer;
 }
 
 .button {
-	border: 1px solid $color-accent-medium;
-	border-radius: .25rem;
+	@extend %button-common;
 	background: linear-gradient(to bottom, $color-canvas 5%, #EEE 10%, #BBB 90%, #888 100%);
-	cursor: pointer;
 
 	&:hover {
 		background: #DDD;
@@ -44,10 +44,8 @@
 }
 
 .default {
-	border: 1px solid $color-accent-medium;
-	border-radius: .25rem;
+	@extend %button-common;
 	background: linear-gradient(to bottom, $color-canvas 5%, $color-accent-pale 10%, mix($color-accent-dark, $color-accent-pale, 40%) 90%, $color-accent-dark 100%);
-	cursor: pointer;
 
 	&:hover {
 		background: mix($color-accent-dark, $color-accent-pale, 10%);

@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import Select from 'react-select';
 
-import { setStoryIndex, setWillClear } from '../../reducers/ui';
+import { setShowStory, setStoryIndex, setWillClear } from '../../reducers/ui';
 
 import EmailModal from '../EmailModal';
 import StoryPanel from '../StoryPanel';
@@ -29,10 +29,14 @@ function onChange({value}, history, dispatch) {
 	}
 }
 
-function ApplicationView({options, index, title}) {
+function ApplicationView({options, index, title, showStory}) {
 
 	const history = useHistory();
 	const dispatch = useDispatch();
+
+	function showDetail(show) {
+		dispatch(setShowStory(show));
+	}
 
 	return (
 		<>
@@ -40,11 +44,11 @@ function ApplicationView({options, index, title}) {
 				<Title packed={true}>MadLibs, React style</Title>
 				<Select options={options} value={options[index]} onChange={value => onChange(value, history, dispatch)} isSearchable={false} />
 				<Title>{title}</Title>
-				<MasterDetailLayout id="story" masterLabel="Words" detailLabel="Story">
-					<MasterPanel>
+				<MasterDetailLayout id="story" masterLabel="Words" detailLabel="Story" highlightDetail={showStory} highlightDetailCallback={showDetail}>
+					<MasterPanel highlightDetail={showStory}>
 						<WordsPanel/>
 					</MasterPanel>
-					<DetailPanel>
+					<DetailPanel highlightDetail={showStory}>
 						<StoryPanel/>
 					</DetailPanel>
 				</MasterDetailLayout>

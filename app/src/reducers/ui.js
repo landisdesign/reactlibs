@@ -1,7 +1,7 @@
 const reducerPrefix = "UI_";
 const UI_IS_RANDOM = reducerPrefix + "IS_RANDOM";
 const UI_SET_STORY = reducerPrefix + "SET_STORY_INDEX";
-const UI_SET_VISIBLE_PANEL = reducerPrefix + "SET_VISIBLE_PANEL";
+const UI_SET_SHOW_STORY = reducerPrefix + "SET_SHOW_STORY";
 const UI_SET_WILL_CLEAR = reducerPrefix + "SET_WILL_CLEAR";
 const UI_SET_OUTPUT = reducerPrefix + "SET_OUTPUT";
 const UI_CLEAR_OUTPUT = reducerPrefix + "CLEAR_OUTPUT";
@@ -27,10 +27,10 @@ function setStoryIndex(storyIndex) {
 	};
 }
 
-function setVisiblePanel(visiblePanel) {
+function setShowStory(showStory) {
 	return {
-		type: UI_SET_VISIBLE_PANEL,
-		visiblePanel
+		type: UI_SET_SHOW_STORY,
+		showStory
 	};
 }
 
@@ -43,17 +43,17 @@ function setWillClear(willClear) {
 
 const initialUI = {
 	isRandom: false,
-	willClear: false,
+	showStory: false,
 	storyIndex: -1,
-	visiblePanel: 'master',
-	output: ''
+	output: '',
+	willClear: false
 };
 
 function uiReducer(state = initialUI, action) {
 	switch (action.type) {
 		case UI_IS_RANDOM:
+		case UI_SET_SHOW_STORY:
 		case UI_SET_STORY:
-		case UI_SET_VISIBLE_PANEL:
 		case UI_SET_WILL_CLEAR:
 		case UI_SET_OUTPUT:
 			const data = {...action};
@@ -64,4 +64,4 @@ function uiReducer(state = initialUI, action) {
 	}
 }
 
-export {setOutput, setRandom, setStoryIndex, setVisiblePanel, setWillClear, uiReducer};
+export {setOutput, setRandom, setStoryIndex, setShowStory, setWillClear, uiReducer};

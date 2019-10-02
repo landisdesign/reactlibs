@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { objectEquals } from '../../common/common';
 
-import { setRandom, setStoryIndex, setWillClear, setOutput } from '../../reducers/ui';
+import { setRandom, setShowStory, setStoryIndex, setWillClear, setOutput } from '../../reducers/ui';
 import { clearEntries } from '../../reducers/entries';
 
 import ApplicationView from './ApplicationView';
@@ -52,6 +52,10 @@ function getWillClear({ui: {willClear}}) {
 	return willClear;
 }
 
+function getShowStory({ui: {showStory}}) {
+	return showStory;
+}
+
 /**
  *	Application wrapper for the entire application. It identifies the story to
  *	present, along with defining the overall presentation.
@@ -66,6 +70,7 @@ function Application(props) {
 	const savedIndex = useSelector(getStoryIndex);
 	const title = useSelector(getTitle);
 	const willClear = useSelector(getWillClear);
+	const showStory = useSelector(getShowStory);
 
 	const {id = ""} = props;
 	const isRandom = id === RANDOM_ID;
@@ -91,12 +96,13 @@ function Application(props) {
 	else {
 		if (willClear) {
 			dispatch(setOutput(''));
+			dispatch(setShowStory(false));
 			dispatch(clearEntries(index));
 		}
 		if (isRandom) {
 			index = options.length - 1;
 		}
-		return <ApplicationView {...{index, title, options}} />;
+		return <ApplicationView {...{index, title, options, showStory}} />;
 	}
 }
 

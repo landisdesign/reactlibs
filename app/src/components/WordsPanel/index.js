@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { arrayEquals, objectEquals } from '../../common/common';
 import { clearEntries, setEntries } from '../../reducers/entries';
-import { setOutput } from '../../reducers/ui';
+import { setShowStory, setOutput } from '../../reducers/ui';
 
 import styles from './WordsPanel.module.scss';
 
@@ -63,6 +63,7 @@ function WordsPanel() {
 			return fields[+index - 1].value.replace(/</g, '&gt;');
 		});
 		dispatch(setOutput(output));
+		dispatch(setShowStory(true));
 	}
 
 	const defaultButton = {

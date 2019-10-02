@@ -2,44 +2,71 @@ import React from 'react';
 
 import styles from './MasterDetailLayout.module.scss';
 
-function MasterPanel(props) {
+function MasterPanel({children, highlightDetail = false}) {
 	return (
-		<div className={styles.masterPanel}>
-			{props.children}
+		<div className={styles.masterPanel + (highlightDetail ? '' : ' ' + styles.currentPanel)}>
+			{children}
 		</div>
 	);
+//
 }
 
-function DetailPanel(props) {
+function DetailPanel({children, highlightDetail = false}) {
 	return (
-		<div className={styles.detailPanel}>
-			{props.children}
+		<div className={styles.detailPanel + (highlightDetail ? ' ' + styles.currentPanel : '')}>
+			{children}
 		</div>
 	);
+//
 }
 
-function MasterDetailLayout(props) {
+function MasterDetailLayout({ masterLabel, detailLabel, highlightDetail = false, highlightDetailCallback, children}) {
 
-	let masterTabRef = null;
-	let detailTabRef = null;
+	function switchControl(e) {
+		const clickedTab = e.target;
 
-	let tabs = "", tabList = "";
+		if (clickedTab.className === styles.currentTab) {
+			return; // it's a one-liner, but a premature exit deserves more emphasis than one line.
+		}
 
-	if (props.masterLabel) {
-		tabs = <li ref={masterTabRef} className={styles.tab}>{props.masterLabel}</li>;
-	}
-	if (props.masterLabel) {
-		tabs = <>{tabs} <li ref={detailTabRef} className={styles.tab}>{props.detailLabel}</li></>;
-	}
-	if (tabs !== "") {
-		tabs = <div className={styles.tabHolder}><ul className={styles.tabs}>{tabs}</ul></div>;
+		if (highlightDetailCallback) {
+			highlightDetailCallback(clickedTab.nextElementSibling == null);
+			return;
+		}
+
+		// define tabs and panels in [master, detail] order
+		const tabs = clickedTab.previousElementSibling ? 
+			[clickedTab.previousElementSibling, clickedTab] :
+			[clickedTab, clickedTab.nextElementSibling]; // Since there's only two tabs, I don't want to deal with nodelists
+		// We hard-code the tab order, but not the panel order. Need to determine order by className, but not using querySelector in case there are nested layouts.
+		const panels = (tab => {
+			const firstPanel = tab.parentElement.parentElement.nextElementSibling.firstElementChild;
+			return [firstPanel, firstPanel.nextElementSibling].sort((a, b) => (a.className.indexOf(styles.detailPanel) === -1 ? -1 : 1));
+		})(clickedTab);
+		const panelStyles = [ styles.masterPanel, styles.detailPanel ];
+
+		tabs.forEach((tab, index) => {
+			if (tab === clickedTab) {
+				tab.className = styles.currentTab;
+				panels[index].className = panelStyles[index] + ' ' + styles.currentPanel;
+			}
+			else {
+				tab.className = styles.tab;
+				panels[index].className = panelStyles[index];
+			}
+		});
 	}
 
 	return (
 		<div className={styles.container}>
-			{tabs}
+			<div className={styles.tabHolder}>
+				<ul className={styles.tabs}>
+					<li className={highlightDetail ? styles.tab: styles.currentTab} onClick={switchControl}>{masterLabel}</li>
+					<li className={highlightDetail ? styles.currentTab: styles.tab} onClick={switchControl}>{detailLabel}</li>
+				</ul>
+			</div>
 			<div className={styles.panelHolder}>
-				{props.children}
+				{children}
 			</div>
 		</div>
 	);

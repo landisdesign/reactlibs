@@ -8,19 +8,17 @@
 	border: 1px solid $color-accent-dark;
 }
 
-@media #{$media-desktop} {
-	.container {
-	}
-
+@media #{$media-not-phone} {
 	.tabHolder {
 		display: none;
 	}
 
 	.panelHolder {
 		display: grid;
-		grid: "master detail" / 35% 65%;
+		grid: "master detail" / minmax(min-content, 35%) 1fr;
 		column-gap: .5rem;
-		height: calc(100% - 1rem);
+		box-sizing: border-box;
+		height: 100%;
 		padding: .5rem;
 	}
 
@@ -33,6 +31,70 @@
 	.detailPanel {
 		grid-area: detail;
 		height: 100%;
+	}
+}
+
+@media #{$media-phone} {
+
+	.container {
+		display: grid;
+		grid: "tabs"
+		      "panels" 1fr;
+	}
+
+	.tabHolder {
+		grid-area: tabs;
+		display: block;
+		z-index: 1;
+		margin: 0 0 -1px;
+	}
+
+	.tabs {
+		display: flex;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	%tab-defaults {
+		padding: .5rem 2rem;
+		border: 1px solid $color-accent-dark;
+		border-radius: .5rem .5rem 0 0;
+		margin-right: .25rem;
+		cursor: pointer;
+	}
+
+	.tab {
+		@extend %tab-defaults;
+		background-color: $color-accent-pale;
+	}
+
+	.currentTab {
+		@extend %tab-defaults;
+		border-bottom-color: $color-canvas;
+	}
+
+	.panelHolder {
+		grid-area: panels;
+		position: relative;
+		box-sizing: border-box;
+		padding: .5rem 0 .5rem .5rem;
+	}
+
+	.masterPanel,
+	.detailPanel {
+		position: absolute;
+		visibility: hidden;
+		top: 0;
+		right: 0;
+		left: 0;
+		box-sizing: border-box;
+		padding: .5rem 0 .5rem .5rem;
+		height: 100%;
+	}
+
+	.currentPanel {
+		visibility: visible;
 	}
 }
 
