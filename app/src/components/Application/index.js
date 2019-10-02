@@ -98,6 +98,7 @@ function Application(props) {
 			dispatch(setOutput(''));
 			dispatch(setShowStory(false));
 			dispatch(clearEntries(index));
+			dispatch(setWillClear(false));
 		}
 		if (isRandom) {
 			index = options.length - 1;
