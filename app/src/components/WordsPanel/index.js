@@ -60,7 +60,7 @@ function WordsPanel() {
 
 	function buildStory() {
 		const output = template.replace(/\{\{(\d+)\}\}/g, (match, index) => {
-			return fields[+index - 1].value.replace(/</g, '&gt;');
+			return fields[+index - 1].value.replace(/</g, '&lt;');
 		});
 		dispatch(setOutput(output));
 		dispatch(setShowStory(true));
