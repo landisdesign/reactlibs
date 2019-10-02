@@ -1,24 +1,50 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './MasterDetailLayout.module.scss';
 
-function MasterPanel({children, highlightDetail = false}) {
-	return (
-		<div className={styles.masterPanel + (highlightDetail ? '' : ' ' + styles.currentPanel)}>
-			{children}
-		</div>
-	);
-//
-}
+MasterDetailLayout.propTypes = {
+	children: (props, propName, componentName) => {
 
-function DetailPanel({children, highlightDetail = false}) {
-	return (
-		<div className={styles.detailPanel + (highlightDetail ? ' ' + styles.currentPanel : '')}>
-			{children}
-		</div>
-	);
-//
-}
+		const children = props[propName];
+		const hasChildren = {
+			"MasterPanel" : false,
+			"DetailPanel" : false
+		};
+		let error = null;
+		React.Children.forEach(children, child => {
+			if (error) return; // only return first error
+
+			if (typeof child === "string") {
+				error = new Error(`HTML and text must be contained within the <MasterPanel/> or <DetailPanel/> inside a ${componentName}.`);
+			}
+			else {
+				const childName = child.type.name;
+
+				if (!childName) { // HTML
+					error = new Error(`HTML and text must be contained within the MasterPanel or DetailPanel of a ${componentName}.`);
+				}
+				else if (!(childName in hasChildren)) {
+					error = new Error(`${childName} is not a valid child of ${componentName}.`);
+				}
+				else {
+					if (hasChildren[childName]) {
+						error = new Error(`There can only be one ${childName} inside each ${componentName}.`);
+					}
+					else {
+						hasChildren[childName] = true;
+					}
+				}
+			}
+		});
+		if (!error) {
+			if (!Object.values(hasChildren).every(x=>x)) {
+				error = new Error(`${componentName} must have exactly one MasterPanel and one DetailPanel.`);
+			}
+		}
+		return error;
+	}
+};
 
 function MasterDetailLayout({ masterLabel, detailLabel, highlightDetail = false, highlightDetailCallback, children}) {
 
@@ -68,6 +94,22 @@ function MasterDetailLayout({ masterLabel, detailLabel, highlightDetail = false,
 			<div className={styles.panelHolder}>
 				{children}
 			</div>
+		</div>
+	);
+}
+
+function MasterPanel({children, highlightDetail = false}) {
+	return (
+		<div className={styles.masterPanel + (highlightDetail ? '' : ' ' + styles.currentPanel)}>
+			{children}
+		</div>
+	);
+}
+
+function DetailPanel({children, highlightDetail = false}) {
+	return (
+		<div className={styles.detailPanel + (highlightDetail ? ' ' + styles.currentPanel : '')}>
+			{children}
 		</div>
 	);
 }
