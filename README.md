@@ -17,7 +17,7 @@ Before this app, I'd built a simple 2-state app using old-school AJAX to fetch a
 * __React Router__  
 	I figured this would be required knowledge in most larger apps.
 
-* __SCSS Modules__
+* __SCSS Modules__  
 	While I'd used SCSS before, I really enjoyed playing with it in this modular style.  
 
 * __Fetch API, `async`/`await` and Promises__  
