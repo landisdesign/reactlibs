@@ -12,7 +12,6 @@ import styles from './WordRow.module.scss';
 
 function WordRow({entryIndex, storyIndex, value, help, label, words, dispatch}) {
 
-
 	function changeWord(value) {
 		dispatch(setEntry({
 			storyIndex,
