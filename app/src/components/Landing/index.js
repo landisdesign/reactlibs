@@ -13,34 +13,34 @@ import Image from '../../elements/Image';
 import ProgressIndicator from '../../elements/ProgressIndicator';
 import Title from '../../elements/Title';
 
-function extractData({config}) {
-
-	const progress = config.wordSources.reduce(
-		({current, total}, {loaded}) => ({
-				current: loaded ? ++current : current,
-				total: ++total
-		}), ({
-			current: config.storySource.loaded ? 1 : 0,
-			total: 1
-		})
-	);
-
-	return {
-		loading: config.loading,
-		loaded: config.loaded,
-		...progress,
-		stories: config.storySource.stories,
-		wordSources: config.wordSources
-	}
-}
-
-// We don't care about the state of stories and wordSource, since we need both and they won't be available until current == total
-function stateUnchanged(a, b) {
-	const props = ["loading", "loaded", "current", "total"];
-	return props.every(prop => a[prop] === b[prop]);
-}
-
 function Landing() {
+
+	function extractData({config}) {
+
+		const progress = config.wordSources.reduce(
+			({current, total}, {loaded}) => ({
+					current: loaded ? ++current : current,
+					total: ++total
+			}), ({
+				current: config.storySource.loaded ? 1 : 0,
+				total: 1
+			})
+		);
+
+		return {
+			loading: config.loading,
+			loaded: config.loaded,
+			...progress,
+			stories: config.storySource.stories,
+			wordSources: config.wordSources
+		}
+	}
+
+	// We don't care about the state of stories and wordSource, since we need both and they won't be available until current == total
+	function stateUnchanged(a, b) {
+		const props = ["loading", "loaded", "current", "total"];
+		return props.every(prop => a[prop] === b[prop]);
+	}
 
 	const
 		{loaded, loading, current, total, stories, wordSources} = useSelector(extractData, stateUnchanged),

@@ -10,9 +10,6 @@ import Text from '../../elements/Text';
 
 function EmailModal() {
 
-	const dispatch = useDispatch();
-	const {showEMail, transitionEMail} = useSelector(({ui: {showEMail, transitionEMail}}) => ({showEMail, transitionEMail}), objectEquals);
-
 	function fadeOpenHandler() {
 		dispatch(setShowEMail(true, false));
 	}
@@ -24,6 +21,9 @@ function EmailModal() {
 	function closeHandler() {
 		dispatch(setShowEMail(false, true));
 	}
+
+	const dispatch = useDispatch();
+	const {showEMail, transitionEMail} = useSelector(({ui: {showEMail, transitionEMail}}) => ({showEMail, transitionEMail}), objectEquals);
 
 	let fade = transitionEMail && (showEMail ? fadeOpenHandler : fadeCloseHandler);
 

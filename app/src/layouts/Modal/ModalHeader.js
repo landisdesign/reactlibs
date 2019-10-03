@@ -4,8 +4,7 @@ import Close from '../../svg/Close';
 
 import styles from './ModalHeader.module.scss';
 
-const ModalHeader = (props) => {
-	const {title, closeHandler} = props;
+const ModalHeader = ({title, closeHandler}) => {
 
 	if (title || closeHandler) {
 		return (

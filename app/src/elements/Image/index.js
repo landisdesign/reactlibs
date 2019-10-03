@@ -11,7 +11,11 @@ Image.propTypes = {
 	/**
 		The alignment of the image. Currently the only possible value is "center", which centers it horizontally and adds a rem of top and bottom margin. All other values, or no value, renders it as a standard inline image element.
 	 */
-	align: PropTypes.string
+	align: PropTypes.string,
+	/**
+		Alt text for the image
+	 */
+	alt: PropTypes.string,
 };
 
 /**

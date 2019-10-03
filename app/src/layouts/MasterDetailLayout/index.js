@@ -126,6 +126,8 @@ function MasterDetailLayout({ masterLabel, detailLabel, highlightDetail = false,
 	);
 }
 
+// I'm including MasterPanel and DetailPanel in this same file because they're simple dependent children that will always be used with MasterDetailLayout
+
 function MasterPanel({children, highlightDetail = false}) {
 	return (
 		<div className={styles.masterPanel + (highlightDetail ? '' : ' ' + styles.currentPanel)}>

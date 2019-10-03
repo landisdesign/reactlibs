@@ -12,6 +12,7 @@ function FormLayout({ scrolling = false, onSubmit = cancelEvent, defaultButton =
 	}
 
 	const className = styles[scrolling ? "containerScrolling" : "container"];
+
 	const buttonPanel = buttons.length ? (
 		<div className={styles.buttons}>
 			{
@@ -19,6 +20,7 @@ function FormLayout({ scrolling = false, onSubmit = cancelEvent, defaultButton =
 			}
 		</div>
 	) : null;
+				
 	const fields = scrolling ? <div className={styles.scroller}>{children}</div> : children;
 
 	return (

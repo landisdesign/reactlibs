@@ -15,36 +15,37 @@ import FormLayout from '../../layouts/FormLayout';
 
 import Refresh from '../../svg/Refresh';
 
-function getFields({ui: {storyIndex}, stories: {stories}, words, entries}) {
-
-	if (storyIndex === -1) {
-		return [];
-	}
-
-	return stories[storyIndex].fields.map((field, index) => ({
-		storyIndex,
-		entryIndex: index,
-		words: words[field].words,
-		label: words[field].title,
-		value: entries[storyIndex][index],
-		help: (words[field].help || null)
-	}) );
-}
-
-function getTemplate({ui: {storyIndex}, stories: {stories}}) {
-	return storyIndex === -1 ? '' : stories[storyIndex].template;
-}
-
-function checkFields(a, b) {
-	return arrayEquals(a, b, objectEquals);
-}
-
 function WordsPanel() {
 
+	function getFields({ui: {storyIndex}, stories: {stories}, words, entries}) {
+
+		if (storyIndex === -1) {
+			return [];
+		}
+
+		return stories[storyIndex].fields.map((field, index) => ({
+			storyIndex,
+			entryIndex: index,
+			words: words[field].words,
+			label: words[field].title,
+			value: entries[storyIndex][index],
+			help: (words[field].help || null)
+		}) );
+	}
+
+	function checkFields(a, b) {
+		return arrayEquals(a, b, objectEquals);
+	}
+
+	function getTemplate({ui: {storyIndex}, stories: {stories}}) {
+		return storyIndex === -1 ? '' : stories[storyIndex].template;
+	}
+
 	const fields = useSelector(getFields, checkFields);
-	const dispatch = useDispatch();
 	const isComplete = fields.every(({value}) => (value.length > 0));
 	const template = useSelector(getTemplate);
+
+	const dispatch = useDispatch();
 
 	function randomize() {
 		dispatch(setEntries(

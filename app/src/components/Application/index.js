@@ -21,56 +21,36 @@ Application.propTypes = {
 
 const RANDOM_ID = "surprise";
 
-function getIndexMap(state) {
-	return {...state.stories.idMap};
-}
-
-function getIsLoaded(state) {
-	return state.config.loaded;
-}
-
-function getOptions(state) {
-	const options = state.stories.stories.map( ({id, title}) => ({value: id, label: title}) );
-	options.push( {value: RANDOM_ID, label: "Pick a random story"} );
-	return options;
-}
-
-function checkOptions(currentOptions, newOptions) {
-	return (currentOptions.length === newOptions.length) &&
-		currentOptions.every( ({label, value}, i) => (label === newOptions[i].label) && (value === newOptions[i].value) );
-}
-
-function getStoryIndex(state) {
-	return state.ui.storyIndex;
-}
-
-function getTitle({stories: {stories}, ui: {isRandom, storyIndex: index}}) {
-	return isRandom ? "(Mystery story)" : (stories[index] && stories[index].title) || "\xA0"; // makes sure space is maitained for title so the UI doesn't jump around.
-}
-
-function getWillClear({ui: {willClear}}) {
-	return willClear;
-}
-
-function getShowStory({ui: {showStory}}) {
-	return showStory;
-}
-
 /**
  *	Application wrapper for the entire application. It identifies the story to
  *	present, along with defining the overall presentation.
  */
 function Application({id = ''}) {
 
-	const dispatch = useDispatch();
+	function getOptions(state) {
+		const options = state.stories.stories.map( ({id, title}) => ({value: id, label: title}) );
+		options.push( {value: RANDOM_ID, label: "Pick a random story"} );
+		return options;
+	}
 
-	const indexMap = useSelector(getIndexMap, objectEquals);
-	const isLoaded = useSelector(getIsLoaded);
+	function checkOptions(currentOptions, newOptions) {
+		return (currentOptions.length === newOptions.length) &&
+			currentOptions.every( ({label, value}, i) => (label === newOptions[i].label) && (value === newOptions[i].value) );
+	}
+
+	function getTitle({stories: {stories}, ui: {isRandom, storyIndex: index}}) {
+		return isRandom ? "(Mystery story)" : (stories[index] && stories[index].title) || "\xA0"; // makes sure space is maitained for title so the UI doesn't jump around.
+	}
+
 	const options = useSelector(getOptions, checkOptions);
-	const savedIndex = useSelector(getStoryIndex);
 	const title = useSelector(getTitle);
-	const willClear = useSelector(getWillClear);
-	const showStory = useSelector(getShowStory);
+	const indexMap = useSelector(state => ({...state.stories.idMap}), objectEquals);
+	const isLoaded = useSelector(state => state.config.loaded);
+	const savedIndex = useSelector(state => state.ui.storyIndex);
+	const willClear = useSelector(state => state.ui.willClear);
+	const showStory = useSelector(state => state.ui.showStory);
+
+	const dispatch = useDispatch();
 
 	const isRandom = id === RANDOM_ID;
 	dispatch(setRandom(isRandom));
@@ -102,6 +82,8 @@ function Application({id = ''}) {
 		if (isRandom) {
 			index = options.length - 1;
 		}
+		// Because the view and application logic are pretty large, I'm splitting them into separate files.
+		// I'm keeping the outer wrapper as index.js to keep this transparent to other modules.
 		return <ApplicationView {...{index, title, options, showStory}} />;
 	}
 }

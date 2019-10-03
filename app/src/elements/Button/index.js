@@ -15,15 +15,6 @@ Button.propTypes = {
 	value: PropTypes.string
 };
 
-const objectMask = {
-	name: true,
-	onClick: true,
-	style: true,
-	title: true,
-	value: true,
-	disabled: true
-};
-
 function Button(props) {
 	// Performing destructuring here instead of in the arguments to be able to collect the rest of props later
 	const {
@@ -33,11 +24,20 @@ function Button(props) {
 		content = '',
 		children = <>{content}</>
 	} = props;
-	const type = isSubmit ? "submit" : "button";
+
+	// I want to restrict the properties passed into the HTML button tag to the following, along with the constructed className and type below.
+	const objectMask = {
+		name: true,
+		onClick: true,
+		style: true,
+		title: true,
+		value: true,
+		disabled: true
+	};
 
 	const buttonProps = {
 		className: (className && className + ' ') + (isDefault ? styles.default : styles.button),
-		type,
+		type: isSubmit ? "submit" : "button",
 		...maskObject(props, objectMask)
 	};
 	return <button {...buttonProps}>{children}</button>;
