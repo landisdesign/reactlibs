@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 import {buildClassNames, chooseList, sleep} from '../../common/common.js';
 
-import ButtonGroup from '../../elements/forms/ButtonGroup';
 import ModalHeader from './ModalHeader';
 
 import styles from './Modal.module.scss';

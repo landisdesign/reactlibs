@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setEntry } from '../../reducers/entries';
 
 import Tooltip from '../../elements/Tooltip';
-import Button from '../../elements/forms/Button'
+import Button from '../../elements/Button'
 
 import Info from '../../svg/Info';
 import Refresh from '../../svg/Refresh';

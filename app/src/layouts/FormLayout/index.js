@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { cancelEvent } from '../../common/common';
-import Button from '../../elements/forms/Button';
+import Button from '../../elements/Button';
 
 import styles from './FormLayout.module.scss';
 
