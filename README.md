@@ -40,7 +40,7 @@ I also have a top-level directory for the SVG icons, since they are consistent c
 
 My personal preference is nesting functions that won't be exported. This lets me visually narrow their scope as well as encapsulate the code.
 
-I also prefer to make my functions short, preferably not much more than 10 lines or so, to reduce the amount of code that needs to be mentally tracked at any given time.
+I also prefer to make my functions short, preferably not much more than 20 lines or so, to reduce the amount of code that needs to be mentally tracked at any given time. If a function gets too long, I'll break it up into descriptively named functions.
 
 I prefer standard functions to arrow functions. They permit hoisting, which allows me to, for example, put propType declarations above the function where the parameters can be defined up front for incoming developers. They're also only defined once, which can help when checking references. It also makes it easier for me to visually distinguish between function expressions and regular variable assignments. The less I have to think, the better!
 
