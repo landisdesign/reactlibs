@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { useSelector, useDispatch } from 'react-redux';
 import { useRouteMatch, Redirect } from 'react-router-dom';
 
@@ -13,6 +14,10 @@ import Image from '../../elements/Image';
 import ProgressIndicator from '../../elements/ProgressIndicator';
 import Title from '../../elements/Title';
 
+/**
+ *	Presents opening splash modal, triggers config fetching, and triggers state
+ *	consolidation before returning control to the application.
+ */
 function Landing() {
 
 	function extractData({config}) {

@@ -15,6 +15,11 @@ import FormLayout from '../../layouts/FormLayout';
 
 import Refresh from '../../svg/Refresh';
 
+/**
+ *	Present the entries for the given story as well as the buttons for randomly
+ *	populating all words, clearing the current story, and presenting the finished
+ *	story.
+ */
 function WordsPanel() {
 
 	function getFields({ui: {storyIndex}, stories: {stories}, words, entries}) {

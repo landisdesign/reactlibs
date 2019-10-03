@@ -7,6 +7,9 @@ import Text from '../../elements/Text';
 
 import FormLayout from '../../layouts/FormLayout';
 
+/**
+ *	Presents the story when created, along with a button open the demo e-mail dialog.
+ */
 function StoryPanel() {
 
 	function openDialog() {

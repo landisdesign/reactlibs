@@ -8,16 +8,25 @@ import Modal from '../../layouts/Modal';
 
 import Text from '../../elements/Text';
 
+/**
+ *	Demonstration of the modal dialog. In a real application there would also be a form,
+ *	validation and submission to the server.
+ *
+ *	All input values are managed by state.
+ */
 function EmailModal() {
 
+	// fired when dialog is finished fading open to signal open completion
 	function fadeOpenHandler() {
 		dispatch(setShowEMail(true, false));
 	}
 
+	// fired when dialog is finished fading closed to signal close completion.
 	function fadeCloseHandler() {
 		dispatch(setShowEMail(false, false));
 	}
 
+	// fired when dialog needs to begin close transition
 	function closeHandler() {
 		dispatch(setShowEMail(false, true));
 	}

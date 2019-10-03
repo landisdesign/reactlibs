@@ -15,7 +15,8 @@ MasterDetailLayout.propTypes = {
 	detailLabel: PropTypes.string.isRequired,
 
 	/**
-	 *	Set to {true} if the details panel should appear by default instead of the master panel.
+	 *	Set to {true} if the details tab should appear highlighed by default in phone
+	 *	media instead of the master tab.
 	 */
 	highlightDetails: PropTypes.bool,
 
@@ -74,6 +75,14 @@ MasterDetailLayout.propTypes = {
 	}
 };
 
+/**
+ *	A layout that shows two panels side by side, or as tabs in phone media. The Master
+ *	panel is displayed first, with the larger Detail panel to its right on tablets and
+ *	desktops.
+
+ *	MasterDetailPanels must have only two direct children, a single MasterPanel and a
+ *	single DetailPanel, available as non-default exports in this module.
+ */
 function MasterDetailLayout({ masterLabel, detailLabel, highlightDetail = false, highlightDetailCallback, children }) {
 
 	function switchControl(e) {
@@ -128,6 +137,16 @@ function MasterDetailLayout({ masterLabel, detailLabel, highlightDetail = false,
 
 // I'm including MasterPanel and DetailPanel in this same file because they're simple dependent children that will always be used with MasterDetailLayout
 
+MasterPanel.propTypes = {
+	/**
+	 *	If set to {true}, the MasterPanel will be hidden by default in phone media.
+	 */
+	highlightDetail: PropTypes.bool
+};
+
+/**
+ *	The MasterPanel to appear in a MasterDetailLayout component
+ */
 function MasterPanel({children, highlightDetail = false}) {
 	return (
 		<div className={styles.masterPanel + (highlightDetail ? '' : ' ' + styles.currentPanel)}>
@@ -136,6 +155,16 @@ function MasterPanel({children, highlightDetail = false}) {
 	);
 }
 
+DetailPanel.propTypes = {
+	/**
+	 *	If set to {true}, the DetailPanel will be shown by default in phone media.
+	 */
+	highlightDetail: PropTypes.bool
+};
+
+/**
+ *	The DetailPanel to appear in a MasterDetailLayout component
+ */
 function DetailPanel({children, highlightDetail = false}) {
 	return (
 		<div className={styles.detailPanel + (highlightDetail ? ' ' + styles.currentPanel : '')}>
