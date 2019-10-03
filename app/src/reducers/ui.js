@@ -1,6 +1,7 @@
 const reducerPrefix = "UI_";
 const UI_IS_RANDOM = reducerPrefix + "IS_RANDOM";
 const UI_SET_STORY = reducerPrefix + "SET_STORY_INDEX";
+const UI_SET_SHOW_EMAIL = reducerPrefix + "SET_SHOW_EMAIL";
 const UI_SET_SHOW_STORY = reducerPrefix + "SET_SHOW_STORY";
 const UI_SET_WILL_CLEAR = reducerPrefix + "SET_WILL_CLEAR";
 const UI_SET_OUTPUT = reducerPrefix + "SET_OUTPUT";
@@ -34,6 +35,14 @@ function setShowStory(showStory) {
 	};
 }
 
+function setShowEMail(showEMail, transition) {
+	return {
+		type: UI_SET_SHOW_EMAIL,
+		showEMail,
+		transitionEMail: transition
+	};
+}
+
 function setWillClear(willClear) {
 	return {
 		type: UI_SET_WILL_CLEAR,
@@ -44,6 +53,8 @@ function setWillClear(willClear) {
 const initialUI = {
 	isRandom: false,
 	showStory: false,
+	showEMail: false,
+	transitionEMail: false,
 	storyIndex: -1,
 	output: '',
 	willClear: false
@@ -53,6 +64,7 @@ function uiReducer(state = initialUI, action) {
 	switch (action.type) {
 		case UI_IS_RANDOM:
 		case UI_SET_SHOW_STORY:
+		case UI_SET_SHOW_EMAIL:
 		case UI_SET_STORY:
 		case UI_SET_WILL_CLEAR:
 		case UI_SET_OUTPUT:
@@ -64,4 +76,4 @@ function uiReducer(state = initialUI, action) {
 	}
 }
 
-export {setOutput, setRandom, setStoryIndex, setShowStory, setWillClear, uiReducer};
+export {setOutput, setRandom, setStoryIndex, setShowEMail, setShowStory, setWillClear, uiReducer};

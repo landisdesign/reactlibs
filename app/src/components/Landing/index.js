@@ -65,7 +65,7 @@ function Landing() {
 	return redirect ? (
 		<Redirect to="/stories"/>
 	) : (
-		<Modal open={open} fade={complete} background="#FFF">
+		<Modal open={open} fade={complete} background="#FFF" close={false}>
 			<Image src="/development/madlibs/logo.png" align="center"/>
 			<Title>MadLibs, React style</Title>
 			<ProgressIndicator current={current} max={total} width="80%" backgroundColor="#DEF" />
