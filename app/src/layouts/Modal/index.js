@@ -70,11 +70,8 @@ function Modal({open = false, fade = false, close = true, background, title, chi
 	}
 
 	function modalKeyHandler(e) {
-		switch (e.key) {
-			case 'Escape':
-				if (closeHandler && modalDiv && !closed) {
-					closeHandler(e);
-				}
+		if (e.key === 'Escape' && closeHandler && modalDiv && !closed) {
+			closeHandler(e);
 		}
 	}
 

@@ -7,8 +7,6 @@ function loadWords(wordConfig) {
 	};
 }
 
-const cloneWords = (list) => ({...list, words: [...(list.words)]});
-
 function wordsReducer(state = {}, action) {
 
 	function createWordMap({words}) {

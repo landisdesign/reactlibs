@@ -2,8 +2,6 @@ import React from 'react';
 
 import Base from './';
 
-import styles from './svg.module.scss';
-
 function Refresh(props) {
 	return (
 		<Base {...props}>

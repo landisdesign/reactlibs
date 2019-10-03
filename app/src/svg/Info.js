@@ -2,8 +2,6 @@ import React from 'react';
 
 import Base from './';
 
-import styles from './svg.module.scss';
-
 function Info(props) {
 	return (
 		<Base {...props}>

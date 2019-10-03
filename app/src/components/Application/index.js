@@ -44,7 +44,7 @@ function getStoryIndex(state) {
 	return state.ui.storyIndex;
 }
 
-function getTitle({stories: {stories: stories}, ui: {isRandom, storyIndex: index}}) {
+function getTitle({stories: {stories}, ui: {isRandom, storyIndex: index}}) {
 	return isRandom ? "(Mystery story)" : (stories[index] && stories[index].title) || "\xA0"; // makes sure space is maitained for title so the UI doesn't jump around.
 }
 

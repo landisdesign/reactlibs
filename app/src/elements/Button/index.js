@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { maskObject, noop } from '../../common/common';
+import { maskObject } from '../../common/common';
 
 import styles from './Button.module.scss';
 

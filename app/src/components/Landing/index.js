@@ -2,7 +2,6 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useRouteMatch, Redirect } from 'react-router-dom';
 
-import { sleep } from '../../common/common';
 import { fetchConfig, acknowledgeConfigCompletion } from '../../reducers/config';
 import { loadStories } from '../../reducers/stories';
 import { loadWords } from '../../reducers/words';

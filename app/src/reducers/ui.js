@@ -5,7 +5,6 @@ const UI_SET_SHOW_EMAIL = reducerPrefix + "SET_SHOW_EMAIL";
 const UI_SET_SHOW_STORY = reducerPrefix + "SET_SHOW_STORY";
 const UI_SET_WILL_CLEAR = reducerPrefix + "SET_WILL_CLEAR";
 const UI_SET_OUTPUT = reducerPrefix + "SET_OUTPUT";
-const UI_CLEAR_OUTPUT = reducerPrefix + "CLEAR_OUTPUT";
 
 function setOutput(output) {
 	return {

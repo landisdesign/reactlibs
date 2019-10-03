@@ -4,6 +4,34 @@ import PropTypes from 'prop-types';
 import styles from './MasterDetailLayout.module.scss';
 
 MasterDetailLayout.propTypes = {
+	/**
+	 *	The text to appear in the tab for the master panel in small devices
+	 */
+	masterLabel: PropTypes.string.isRequired,
+
+	/**
+	 *	The text to appear in the tab for the detail panel in small devices
+	 */
+	detailLabel: PropTypes.string.isRequired,
+
+	/**
+	 *	Set to {true} if the details panel should appear by default instead of the master panel.
+	 */
+	highlightDetails: PropTypes.bool,
+
+	/**
+	 *	By default, clicking a tab will show that panel. If this is provided, clicking
+	 *	a tab will call this function instead, with a boolean argument set to {true}
+	 *	if the detail panel should be presented. This is intended to be used to trigger
+	 *	state changes in the application components, which would then redraw the panels
+	 *	by sending the argument through "highlightDetails".
+	 */
+	highlightDetailCallback: PropTypes.func,
+
+	/**
+	 *	MasterDetailLayout must have two child elements, a MasterPanel and a DetailPanel.
+	 *	No HTML or content can appear outside those panels.
+	 */
 	children: (props, propName, componentName) => {
 
 		const children = props[propName];

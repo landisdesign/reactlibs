@@ -17,11 +17,11 @@ Image.propTypes = {
 /**
  *	Present an <img/> from the provided URL.
  */
-function Image({src, align}) {
+function Image({src, align, alt = ''}) {
 
-	const style = align == "center" ? styles.center : null;
+	const style = align === "center" ? styles.center : null;
 
-	return <img className={style} src={src}/>;
+	return <img className={style} src={src} alt={alt} />;
 }
 
 export default Image;
