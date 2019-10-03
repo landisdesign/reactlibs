@@ -8,15 +8,19 @@ When I learned I might be working with React, I felt I needed to learn more abou
 
 Before this app, I'd built a simple 2-state app using old-school AJAX to fetch a couple of Google search results. In this app, I learned:
 
-* __Functional Components__
+* __Functional Components__  
 	Before this, I worked with classes and some functional components. This time I used entirely functional components.
-* __React Hooks__
+
+* __React Hooks__  
 	With functional components came hooks. I learned using hooks for Redux and Router as well as `useEffect`. I kept all my state in Redux, so didn't bother with `useState`.
-* __React Router__
+
+* __React Router__  
 	I figured this would be required knowledge in most larger apps.
-* __Fetch API, `async`/`await` and Promises__
+
+* __Fetch API, `async`/`await` and Promises__  
 	Before this, I had used simple AJAX callbacks. This was an opportunity for me to learn more about modern network API's and asynchronous programming.
-* __`grid` Layout__
+
+* __`grid` Layout__  
 	I hadn't had the opportunity to use this before. Definitely enjoy it.
 
 ### Artifacts
