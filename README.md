@@ -17,6 +17,9 @@ Before this app, I'd built a simple 2-state app using old-school AJAX to fetch a
 * __React Router__  
 	I figured this would be required knowledge in most larger apps.
 
+* __SCSS Modules__
+	While I'd used SCSS before, I really enjoyed playing with it in this modular style.  
+
 * __Fetch API, `async`/`await` and Promises__  
 	Before this, I had used simple AJAX callbacks. This was an opportunity for me to learn more about modern network API's and asynchronous programming.
 
@@ -44,3 +47,5 @@ I prefer standard functions to arrow functions. They permit hoisting, which allo
 I do prefer arrow functions for simple pure utility functions, as well as for simple lambda functions that can fit in a short line. If a lambda function starts getting too big or confusing as an expression, I'll turn it into a descriptively named function.
 
 These are all personal greenfield preferences. I'm happy to follow whatever patterns are being used where I go.
+
+(As a note, my prior job had us using double quotes for strings. After 15 years of that, and seeing single quotes taking the JavaScript world by storm, I'm seeing myself mix the two quote types in my code as my fingers fly through accustomed patterns. I expect to be able to conform as I follow a specific pattern and retrain my fingers.)
