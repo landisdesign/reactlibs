@@ -25,6 +25,7 @@ const objectMask = {
 };
 
 function Button(props) {
+	// Performing destructuring here instead of in the arguments to be able to collect the rest of props later
 	const {
 		isDefault = false,
 		isSubmit = false,

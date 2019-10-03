@@ -29,7 +29,7 @@ ProgressIndicator.propTypes = {
 /**
 	A progress bar, showing the percentage completion of a task
  */
-function ProgressIndicator(props) {
+function ProgressIndicator(props) { // I'm intentionally not destructuring here because most of the props are used by buildBackground. Might as well pass the existing object in.
 
 	const buildBackground = ({current, max, backgroundColor = '#FFF', fillColor = '#369'}) => {
 		const fraction = Math.round(1000 * current / max) / 10;

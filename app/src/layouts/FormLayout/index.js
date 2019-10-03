@@ -5,13 +5,7 @@ import Button from '../../elements/Button';
 
 import styles from './FormLayout.module.scss';
 
-function FormLayout({
-	scrolling = false,
-	onSubmit = cancelEvent,
-	defaultButton = null,
-	buttons = [],
-	children
-}) {
+function FormLayout({ scrolling = false, onSubmit = cancelEvent, defaultButton = null, buttons = [], children }) {
 
 	if (defaultButton) {
 		buttons = [{isDefault: true, ...defaultButton}, ...buttons];

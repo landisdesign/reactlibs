@@ -60,7 +60,7 @@ function getShowStory({ui: {showStory}}) {
  *	Application wrapper for the entire application. It identifies the story to
  *	present, along with defining the overall presentation.
  */
-function Application(props) {
+function Application({id = ''}) {
 
 	const dispatch = useDispatch();
 
@@ -72,7 +72,6 @@ function Application(props) {
 	const willClear = useSelector(getWillClear);
 	const showStory = useSelector(getShowStory);
 
-	const {id = ""} = props;
 	const isRandom = id === RANDOM_ID;
 	dispatch(setRandom(isRandom));
 

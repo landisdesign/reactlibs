@@ -74,7 +74,7 @@ MasterDetailLayout.propTypes = {
 	}
 };
 
-function MasterDetailLayout({ masterLabel, detailLabel, highlightDetail = false, highlightDetailCallback, children}) {
+function MasterDetailLayout({ masterLabel, detailLabel, highlightDetail = false, highlightDetailCallback, children }) {
 
 	function switchControl(e) {
 		const clickedTab = e.target;

@@ -25,14 +25,14 @@ function wordsReducer(state = {}, action) {
 				delete word.ref;
 				wordMap[id] = word;
 			});
-
-			return wordMap;
 		}
+
+		return wordMap;
 	}
 
 	switch (action.type) {
 		case WORDS_LOAD:
-			return {...state, ...createWordMap(action)};
+			return createWordMap(action);
 		default:
 			return state;
 	}
