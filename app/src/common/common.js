@@ -2,6 +2,9 @@ const arrayEquals = (a, b, entryValidator = ((aField, bField) => aField === bFie
 	if (!referenceEquals(a, b)) {
 		return false;
 	}
+	if (a == null) {
+		return true;
+	}
 	if (a.length !== b.length) {
 		return false;
 	}
@@ -29,6 +32,9 @@ const noop = ()=>{};
 const objectEquals = (a, b) => {
 	if (!referenceEquals(a, b)) {
 		return false;
+	}
+	if (a == null) {
+		return true;
 	}
 	const aEntries = Object.entries(a);
 	return aEntries.length === Object.keys(b).length && aEntries.every( ([key, value]) => (b[key] === value) );

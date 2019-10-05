@@ -18,6 +18,9 @@
     "sass": "^1.22.12",
     "whatwg-fetch": "^3.0.0"
   },
+  "jest": {
+
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -38,5 +41,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0"
   }
 }
