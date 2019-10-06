@@ -222,9 +222,20 @@ function configReducer(config = initialConfig, action) {
 	};
 }
 
+// I really dislike exposing these, and am only doing so for use in test cases.
+// I couldn't get babel-plugin-rewire to work to expose these.
+const __test__ = {
+	initConfig,
+	loadStories,
+	loadWordList,
+	reconcileConfig,
+	startApplication
+};
+
 // These three methods are the only ones relevant to other modules. Expose reluctantly!
 export {
 	fetchConfig,
 	acknowledgeConfigCompletion,
-	configReducer
+	configReducer,
+	__test__
 };

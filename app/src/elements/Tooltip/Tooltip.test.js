@@ -25,4 +25,5 @@ describe('<Tooltip/>', () => {
 		expect(reactTooltip.prop('id')).toBe(id);
 		expect(reactTooltip.text()).toBe(tooltipContent);
 	});
+
 });
