@@ -9,12 +9,16 @@ import styles from './Text.module.scss';
  */
 describe('<Text/>', () => {
 
+	// Styles is not set up in the scss module. Explicitly set it up here to return values.
+	styles.default = "default";
+	styles.story = "story";
+
 	test('Default render', ()=> {
 		const content = 'text';
-		const text = render(<Text>{content}</Text>); //
+		const text = shallow(<Text>{content}</Text>); //
+		const expected = <div className={styles.default}>{content}</div>; //
 
-		expect(text.get(0).tagName).toBe('div');
-		expect(text.text()).toBe(content);
+		expect(text.equals(expected)).toBe(true);
 	});
 
 	test('Unsafe content escaped', () => {
@@ -35,17 +39,11 @@ describe('<Text/>', () => {
 
 	test('Story type changes style', () => {
 		const text = render(<Text type='story'>content</Text>); //
-
 		expect(text.hasClass(styles.story)).toBe(true);
 	});
 
-	/*
-	 *	For whatever reason, the class ".default" is not being registered in the text,
-	 *	but works properly irl. This test relies on the default class existing.
-	 */
-	test.skip('Undefined types keep default style', () => {
+	test('Undefined types keep default style', () => {
 		const text = shallow(<Text type='fooBar'>content</Text>); //
-
 		expect(text.hasClass(styles.default)).toBe(true);
 	});
 });

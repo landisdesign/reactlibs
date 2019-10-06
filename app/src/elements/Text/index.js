@@ -22,7 +22,7 @@ Text.propTypes = {
  *	Wrap the provided content with a particular styling.
  */
 function Text({type, html, children}) {
-	const style = styles[type] || styles.default;
+	const style = type in styles ? styles[type] : styles.default;
 
 	return html ? <div className={style} dangerouslySetInnerHTML={{__html: html}}></div> : <div className={style}>{children}</div>;
 }
