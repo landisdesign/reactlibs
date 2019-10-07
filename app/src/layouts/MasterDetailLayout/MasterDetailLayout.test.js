@@ -12,15 +12,15 @@ describe('<MasterDetailLayout/>', () => {
 
 	// Manually adding these to styles to prevent attempts to test invalid class names
 	[
-		"container",
-		"panelHolder",
-		"tabHolder",
-		"masterPanel",
-		"detailPanel",
-		"tabs",
-		"tab",
-		"currentTab",
-		"currentPanel"
+		'container',
+		'panelHolder',
+		'tabHolder',
+		'masterPanel',
+		'detailPanel',
+		'tabs',
+		'tab',
+		'currentTab',
+		'currentPanel'
 	].forEach(className => styles[className] = className);
 
 	const getHtmlFromWrapper = wrapper => selector => wrapper.childAt(0).getDOMNode().querySelectorAll(selector);
@@ -33,7 +33,7 @@ describe('<MasterDetailLayout/>', () => {
 			<DetailPanel>{detail}</DetailPanel>
 		</MasterDetailLayout>); //
 		// We do this because we can't match the entire structure without also matching this function
-		const switchFunction = output.find('[onClick]').first().prop("onClick");
+		const switchFunction = output.find('[onClick]').first().prop('onClick');
 
 		const expectedOutput = mount(
 			<div className={styles.container}>
@@ -85,7 +85,7 @@ describe('<MasterDetailLayout/>', () => {
 			<DetailPanel>{detail}</DetailPanel>
 		</MasterDetailLayout>); //
 
-		const switchFunction = output.find('li').first().prop("onClick");
+		const switchFunction = output.find('li').first().prop('onClick');
 
 		const getHtml = getHtmlFromWrapper(output);
 		const tabs = getHtml('li');
@@ -118,7 +118,7 @@ describe('<MasterDetailLayout/>', () => {
 				<DetailPanel highlightDetail={highlightDetail}>{detail}</DetailPanel>
 			</MasterDetailLayout>); //
 
-			const switchFunction = output.find('li').first().prop("onClick");
+			const switchFunction = output.find('li').first().prop('onClick');
 			const getHtml = getHtmlFromWrapper(output);
 			const tabs = getHtml('li');
 

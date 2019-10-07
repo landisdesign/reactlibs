@@ -37,7 +37,11 @@ Button.propTypes = {
 	/**
 	 *	The button value. If provided, becomes the value field for the button.
 	 */
-	value: PropTypes.string
+	value: PropTypes.string,
+	/**
+	 *	Content to be provided as a property. If provided, it will override any children nested within this tag.
+	 */
+	content: PropTypes.node
 };
 
 /**
