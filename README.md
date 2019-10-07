@@ -42,7 +42,7 @@ My personal preference is nesting functions that won't be exported. This lets me
 
 I also prefer to make my functions short, preferably not much more than 20 lines or so, to reduce the amount of code that needs to be mentally tracked at any given time. If a function gets too long, I'll break it up into descriptively named functions.
 
-I prefer standard functions to arrow functions. They permit hoisting, which allows me to, for example, put propType declarations above the function where the parameters can be defined up front for incoming developers. They're also only defined once, which can help when checking references. It also makes it easier for me to visually distinguish between function expressions and regular variable assignments. The less I have to think, the better!
+I prefer standard functions to arrow functions. They permit hoisting, which allows me to, for example, put propType declarations above the function where the parameters can be defined up front for incoming developers. It also makes it easier for me to visually distinguish between function expressions and regular variable assignments. The less I have to think, the better!
 
 I do prefer arrow functions for simple pure utility functions, as well as for simple lambda functions that can fit in a short line. If a lambda function starts getting too big or confusing as an expression, I'll turn it into a descriptively named function.
 
