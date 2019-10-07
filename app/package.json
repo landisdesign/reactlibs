@@ -18,7 +18,9 @@
     "sass": "^1.22.12",
     "whatwg-fetch": "^3.0.0"
   },
-  "jest": {},
+  "jest": {
+    "testEnvironment": "jsdom"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

@@ -61,7 +61,7 @@ function Modal({open = false, fade = false, close = true, background, title, chi
 			await sleep(toOpen ? 600 : 650);
 			fade(toOpen);
 		}
-	};
+	}
 
 	function defaultCloseHandler(e) {
 		e.stopPropagation();
@@ -80,7 +80,7 @@ function Modal({open = false, fade = false, close = true, background, title, chi
 		return () => {
 			document.removeEventListener("keyup", modalKeyHandler);
 		};
-	})
+	});
 
 	let
 		modalDiv = null,
