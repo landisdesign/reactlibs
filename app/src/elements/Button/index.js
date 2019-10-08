@@ -18,6 +18,10 @@ Button.propTypes = {
 	 */
 	isDefault: PropTypes.bool,
 	/**
+	 *	When set to {true}, disables the button and prevents it from being clicked
+	 */
+	disabled: PropTypes.bool,
+	/**
 	 *	The button name. If provided, becomes the name field for the button.
 	 */
 	name: PropTypes.string,

@@ -19,7 +19,6 @@
     "whatwg-fetch": "^3.0.0"
   },
   "jest": {
-    "testEnvironment": "jsdom"
   },
   "scripts": {
     "start": "react-scripts start",
