@@ -16,14 +16,9 @@ import Text from '../../elements/Text';
  */
 function EmailModal() {
 
-	// fired when dialog is finished fading open to signal open completion
-	function fadeOpenHandler() {
-		dispatch(setShowEMail(true, false));
-	}
-
-	// fired when dialog is finished fading closed to signal close completion.
-	function fadeCloseHandler() {
-		dispatch(setShowEMail(false, false));
+	// fired when dialog is finished fading to signal completion
+	function fadeHandler(isOpen) {
+		dispatch(setShowEMail(isOpen, false));
 	}
 
 	// fired when dialog needs to begin close transition
@@ -34,7 +29,7 @@ function EmailModal() {
 	const dispatch = useDispatch();
 	const {showEMail, transitionEMail} = useSelector(({ui: {showEMail, transitionEMail}}) => ({showEMail, transitionEMail}), objectEquals);
 
-	let fade = transitionEMail && (showEMail ? fadeOpenHandler : fadeCloseHandler);
+	let fade = transitionEMail && fadeHandler;
 
 	return (
 		<Modal title='Send link to story' fade={fade} open={showEMail} close={closeHandler}>
