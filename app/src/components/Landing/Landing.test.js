@@ -1,10 +1,9 @@
 import React from 'react';
-import { MemoryRouter, Route, Redirect } from 'react-router-dom';
+import { MemoryRouter, Route } from 'react-router-dom';
 import { shallow, mount, render } from 'enzyme';
 
-import { useDispatch, setState, getDispatchArguments, getUseSelectorArguments, clearArguments } from 'react-redux';
+import { setState, getDispatchArguments, clearArguments } from 'react-redux';
 
-import { fetchConfig } from '../../reducers/config';
 import { loadStories } from '../../reducers/stories';
 import { loadWords } from '../../reducers/words';
 
@@ -227,18 +226,12 @@ describe('<Landing/>', () => {
 	test('Application start', () => {
 		initialState.config.loading = false;
 
-		const output = render(
+		const output = mount(
 			<MemoryRouter initialEntries={['/']}>
-				<Landing/>
+				<Route component={Landing}/>
 			</MemoryRouter>
 		); //
 
-		const expectedOutput = render(
-			<MemoryRouter initialEntries={['/']}>
-				<Redirect to="/stories"/>
-			</MemoryRouter>
-		);//
-
-		expect(output).toEqual(expectedOutput);
+		expect(output.find(Landing).props().location.pathname).toBe('/stories');
 	});
 });
