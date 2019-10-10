@@ -26,7 +26,7 @@ Before this app, I'd built a simple 2-state app using old-school AJAX to fetch a
 * __`grid` Layout__  
 	I hadn't had the opportunity to use this before. Definitely enjoy it.
 
-* __Third-party nodule mocking with Fetch__
+* __Third-party module mocking with Fetch__
 	When using Fetch with Angular, I didn't have many reasons to mock modules. With React, both Router and Redux were too heavy for my tastes. I created some lightweight shims that let me test my functionality without being concerned with theirs.
 
 * __Enzyme__  
