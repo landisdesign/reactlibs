@@ -19,6 +19,11 @@
     "whatwg-fetch": "^3.0.0"
   },
   "jest": {
+    "collectCoverageFrom": [
+      "**/*.js",
+      "!**/node_modules/**",
+      "!**/vendor/**"
+    ]
   },
   "scripts": {
     "start": "react-scripts start",

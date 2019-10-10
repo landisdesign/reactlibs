@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import { objectEquals } from '../../common/common';
+import { objectEquals, arrayEquals } from '../../common/common';
 
 import { setRandom, setShowStory, setStoryIndex, setWillClear, setOutput } from '../../reducers/ui';
 import { clearEntries } from '../../reducers/entries';
@@ -38,12 +38,12 @@ function Application({id = ''}) {
 			currentOptions.every( ({label, value}, i) => (label === newOptions[i].label) && (value === newOptions[i].value) );
 	}
 
-	function getTitle({stories: {stories}, ui: {isRandom, storyIndex: index}}) {
-		return isRandom ? "(Mystery story)" : (stories[index] && stories[index].title) || "\xA0"; // makes sure space is maitained for title so the UI doesn't jump around.
+	function getTitles({stories: {stories}}) {
+		return stories.map(({title}) => title);
 	}
 
 	const options = useSelector(getOptions, checkOptions);
-	const title = useSelector(getTitle);
+	const titles = useSelector(getTitles, arrayEquals);
 	const indexMap = useSelector(state => ({...state.stories.idMap}), objectEquals);
 	const isLoaded = useSelector(state => state.config.loaded);
 	const savedIndex = useSelector(state => state.ui.storyIndex);
@@ -82,6 +82,7 @@ function Application({id = ''}) {
 		if (isRandom) {
 			index = options.length - 1;
 		}
+		const title = isRandom ? '(Mystery story)' : (index === -1 ? '\xA0' : titles[index]); // \xA0 maintains space for title
 		// Because the view and application logic are pretty large, I'm splitting them into separate files.
 		// I'm keeping the outer wrapper as index.js to keep this transparent to other modules.
 		return <ApplicationView {...{index, title, options, showStory}} />;

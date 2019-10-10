@@ -1,27 +1,44 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { createStore, applyMiddleware } from 'redux';
-import { Provider } from 'react-redux';
-import thunk from 'redux-thunk';
-import logger from 'redux-logger';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { MemoryRouter, Route } from 'react-router-dom';
+import { getDummyState, setState } from 'react-redux';
+import { shallow, mount, render } from 'enzyme';
 
-import './index.css';
 import App from './App';
-import { reducer } from './reducers';
+import Application from './components/Application';
 
-test.skip('renders without crashing', () => {
-	const div = document.createElement('div');
+/*
+ *	Note: I place empty line comments after JSX because my editor can't distinguish between closing JSX tags and starting regexes. ¯\_(ツ)_/¯
+ */
+describe('<App/>', () => {
 
-	const store = createStore(reducer, applyMiddleware(thunk, logger) );
+	let initialState;
 
-	ReactDOM.render((
-		<Provider store={store}>
-			<Router basename="/development/madlibs">
-				<App />
-			</Router>
-		</Provider>
-	), div);
+	beforeEach(() => {
+		initialState = getDummyState();
+		setState(initialState);
+	});
 
-	ReactDOM.unmountComponentAtNode(div);
+	test('Redirect to home page for entering on invalid pages', () => {
+
+		initialState.config.loaded = false;
+
+		const output = mount(
+			<MemoryRouter initialEntries={['/invalid']}>
+				<Route component={App}/>
+			</MemoryRouter>
+		); //
+
+		expect(output.find(App).props().location.pathname).toBe('/');
+	});
+
+	test('Provide a story ID', () => {
+
+		const output = mount(
+			<MemoryRouter initialEntries={['/stories/a']}>
+				<Route component={App}/>
+			</MemoryRouter>
+		); //
+
+		expect(output.find(Application).prop('id')).toBe('a');
+	});
 });

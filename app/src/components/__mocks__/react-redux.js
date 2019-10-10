@@ -11,7 +11,21 @@ const getState = () => state;
 const getDummyState = () => ({
 	config: {
 		loading: false,
-		loaded: true
+		loaded: true,
+		storySource: {
+			url: 'a',
+			loaded: true
+		},
+		wordSources: [
+			{
+				url: 'b',
+				loaded: true
+			},
+			{
+				url: 'c',
+				loaded: true
+			}
+		]
 	},
 	entries: [
 		['a1', 'a2', 'a3'],
