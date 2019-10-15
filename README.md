@@ -30,7 +30,7 @@ Before this app, I'd built a simple 2-state app using old-school AJAX to fetch a
 	When using Fetch with Angular, I didn't have many reasons to mock modules. With React, both Router and Redux were too heavy for my tastes. I created some lightweight shims that let me test my functionality without being concerned with theirs.
 
 	__Note about mocking `node_modules`__  
-	I'm not sure why, but putting `\__mock\__` next to `node_modules` wasn't working. I had to place it down one level. Google yielded no reasons why. My manual node module mocks appear to do be doing their job by placing them in (src/__mocks__).
+	I'm not sure why, but putting `\__mock\__` next to `node_modules` wasn't working. I had to place it down one level. Google yielded no reasons why. My manual node module mocks appear to do be doing their job by placing them in [src/\__mocks\__](src/__mocks__).
 
 * __Enzyme__  
 	I had used Fetch before, primarily in conjunction with Angular. This was my first time testig with Enzyme and discovering its quirks.
