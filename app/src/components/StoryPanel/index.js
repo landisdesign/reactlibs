@@ -29,7 +29,7 @@ function StoryPanel() {
 
 	return story ? (
 		<FormLayout scrolling={true} buttons={button}>
-			<Text type="story" html={story}/>
+			<Text type='story' html={story}/>
 		</FormLayout>
 	) : null;
 }

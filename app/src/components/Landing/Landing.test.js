@@ -48,10 +48,10 @@ describe('<Landing/>', () => {
 		); //
 
 		const expectedOutput = render(
-			<Modal open={true} fade={false} background="#FFF" close={false}>
-				<Image src="/development/madlibs/logo.png" align="center"/>
+			<Modal open={true} fade={false} background='#FFF' close={false}>
+				<Image src='/development/madlibs/logo.png' align='center'/>
 				<Title>MadLibs, React style</Title>
-				<ProgressIndicator current={0} max={1} width="80%" backgroundColor="#DEF" />
+				<ProgressIndicator current={0} max={1} width='80%' backgroundColor='#DEF' />
 				<Copyright/>
 			</Modal>
 		);//
@@ -59,7 +59,7 @@ describe('<Landing/>', () => {
 		expect(output).toEqual(expectedOutput);
 
 		const [thunk] = getDispatchArguments();
-		expect(typeof thunk).toBe("function");
+		expect(typeof thunk).toBe('function');
 	});
 
 	test('Config load presentation', () => {
@@ -89,10 +89,10 @@ describe('<Landing/>', () => {
 		); //
 
 		const expectedOutput = render(
-			<Modal open={true} fade={false} background="#FFF" close={false}>
-				<Image src="/development/madlibs/logo.png" align="center"/>
+			<Modal open={true} fade={false} background='#FFF' close={false}>
+				<Image src='/development/madlibs/logo.png' align='center'/>
 				<Title>MadLibs, React style</Title>
-				<ProgressIndicator current={0} max={3} width="80%" backgroundColor="#DEF" />
+				<ProgressIndicator current={0} max={3} width='80%' backgroundColor='#DEF' />
 				<Copyright/>
 			</Modal>
 		);//
@@ -116,10 +116,10 @@ describe('<Landing/>', () => {
 		); //
 
 		const expectedOutput = render(
-			<Modal open={true} fade={false} background="#FFF" close={false}>
-				<Image src="/development/madlibs/logo.png" align="center"/>
+			<Modal open={true} fade={false} background='#FFF' close={false}>
+				<Image src='/development/madlibs/logo.png' align='center'/>
 				<Title>MadLibs, React style</Title>
-				<ProgressIndicator current={1} max={3} width="80%" backgroundColor="#DEF" />
+				<ProgressIndicator current={1} max={3} width='80%' backgroundColor='#DEF' />
 				<Copyright/>
 			</Modal>
 		);//
@@ -153,10 +153,10 @@ describe('<Landing/>', () => {
 		); //
 
 		const expectedOutput = render(
-			<Modal open={true} fade={false} background="#FFF" close={false}>
-				<Image src="/development/madlibs/logo.png" align="center"/>
+			<Modal open={true} fade={false} background='#FFF' close={false}>
+				<Image src='/development/madlibs/logo.png' align='center'/>
 				<Title>MadLibs, React style</Title>
-				<ProgressIndicator current={2} max={3} width="80%" backgroundColor="#DEF" />
+				<ProgressIndicator current={2} max={3} width='80%' backgroundColor='#DEF' />
 				<Copyright/>
 			</Modal>
 		);//
@@ -179,10 +179,10 @@ describe('<Landing/>', () => {
 		); //
 
 		const expectedOutput = render(
-			<Modal open={true} fade={false} background="#FFF" close={false}>
-				<Image src="/development/madlibs/logo.png" align="center"/>
+			<Modal open={true} fade={false} background='#FFF' close={false}>
+				<Image src='/development/madlibs/logo.png' align='center'/>
 				<Title>MadLibs, React style</Title>
-				<ProgressIndicator current={3} max={3} width="80%" backgroundColor="#DEF" />
+				<ProgressIndicator current={3} max={3} width='80%' backgroundColor='#DEF' />
 				<Copyright/>
 			</Modal>
 		);//
@@ -200,10 +200,10 @@ describe('<Landing/>', () => {
 		); //
 
 		const expectedOutput = render(
-			<Modal open={false} fade={true} background="#FFF" close={false}>
-				<Image src="/development/madlibs/logo.png" align="center"/>
+			<Modal open={false} fade={true} background='#FFF' close={false}>
+				<Image src='/development/madlibs/logo.png' align='center'/>
 				<Title>MadLibs, React style</Title>
-				<ProgressIndicator current={3} max={3} width="80%" backgroundColor="#DEF" />
+				<ProgressIndicator current={3} max={3} width='80%' backgroundColor='#DEF' />
 				<Copyright/>
 			</Modal>
 		);//
@@ -211,7 +211,7 @@ describe('<Landing/>', () => {
 		expect(output).toEqual(expectedOutput);
 
 		const actions = getDispatchArguments();
-		expect(typeof actions.pop()).toBe("function");
+		expect(typeof actions.pop()).toBe('function');
 
 		const sorter = ({type: a}, {type: b}) => a < b ? -1 : (a > b ? 1 : 0);
 

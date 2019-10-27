@@ -40,9 +40,9 @@ function ProgressIndicator(props) { // I'm intentionally not destructuring here 
 			return fillColor;
 		}
 		return `linear-gradient(to right, ${fillColor} ${fraction - 0.1}%, ${backgroundColor} ${fraction + 0.1}%)`;
-	};
+	}
 
-	const { width = "calc(100% - 1rem)" } = props;
+	const { width = 'calc(100% - 1rem)' } = props;
 
 	const style = {
 		width,
@@ -50,7 +50,7 @@ function ProgressIndicator(props) { // I'm intentionally not destructuring here 
 	};
 
 	return (
-		<div className={styles["progress-indicator"]} style={style}></div>
+		<div className={styles['progress-indicator']} style={style}></div>
 	);
 }
 

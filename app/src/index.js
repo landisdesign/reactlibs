@@ -16,7 +16,7 @@ const store = createStore(reducer, applyMiddleware(thunk, logger) );
 
 ReactDOM.render((
 	<Provider store={store}>
-		<Router basename="/development/madlibs">
+		<Router basename='/development/madlibs'>
 			<App />
 		</Router>
 	</Provider>

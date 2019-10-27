@@ -1,4 +1,4 @@
-const STORIES_LOAD = "STORIES_LOAD";
+const STORIES_LOAD = 'STORIES_LOAD';
 
 function loadStories(storySource) {
 	return {

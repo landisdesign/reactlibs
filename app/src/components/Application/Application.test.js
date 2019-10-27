@@ -25,7 +25,7 @@ describe('<Application/>', () => {
 
 	const buildOptions = (state) => {
 		const options = state.stories.stories.map(({id, title}) => ({label: title, value: id}));
-		options.push( {value: RANDOM_ID, label: "Pick a random story"} );
+		options.push( {value: RANDOM_ID, label: 'Pick a random story'} );
 		return options;
 	}
 

@@ -24,7 +24,7 @@ describe('<Modal/>', () => {
 	});
 
 	const hasContent = (wrapper, content) => {
-		expect(wrapper.childAt(0).prop("className")).toBe(styles['modal-content']);
+		expect(wrapper.childAt(0).prop('className')).toBe(styles['modal-content']);
 		expect(wrapper.childAt(0).children().last().equals(<div>{content}</div>)).toBe(true); //
 	};
 

@@ -76,7 +76,7 @@ function WordRow({entryIndex, storyIndex, value, help, label, words, dispatch}) 
 			</div>
 			<div>
 				<input type='text' className={styles.input} name={fieldName} id={fieldName} value={value} onChange={onChange}/>
-				<Button className={styles.button} onClick={loadNewWord} title="Randomize this word"><Refresh className={styles.refresh}/></Button>
+				<Button className={styles.button} onClick={loadNewWord} title='Randomize this word'><Refresh className={styles.refresh}/></Button>
 			</div>
 		</div>
 	);

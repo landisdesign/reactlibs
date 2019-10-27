@@ -43,7 +43,7 @@ function Landing() {
 
 	// We don't care about the state of stories and wordSource, since we need both and they won't be available until current == total
 	function stateUnchanged(a, b) {
-		const props = ["loading", "loaded", "current", "total"];
+		const props = ['loading', 'loaded', 'current', 'total'];
 		// eslint-disable-next-line react/prop-types
 		return props.every(prop => a[prop] === b[prop]);
 	}
@@ -52,13 +52,13 @@ function Landing() {
 		{loaded, loading, current, total, stories, wordSources} = useSelector(extractData, stateUnchanged),
 		fresh = !loaded && !loading, // app just loaded into page. No config yet
 		complete = loaded && loading, // progress is complete, trigger fade, wait, and dispatch acknowledgement message
-		redirect = useRouteMatch({path: "/", exact: true}) && loaded && !loading, // fade is complete, time to redirect
+		redirect = useRouteMatch({path: '/', exact: true}) && loaded && !loading, // fade is complete, time to redirect
 		open = !loaded, // show landing for as long as the config isn't loaded
 		dispatch = useDispatch()
 	;
 
 	if (fresh) {
-		dispatch(fetchConfig( {url: "/development/madlibs/config/config.json", minDelay: 3000} ));
+		dispatch(fetchConfig( {url: '/development/madlibs/config/config.json', minDelay: 3000} ));
 	}
 
 	if (complete) {
@@ -68,12 +68,12 @@ function Landing() {
 	}
 
 	return redirect ? (
-		<Redirect to="/stories"/>
+		<Redirect to='/stories'/>
 	) : (
-		<Modal open={open} fade={complete} background="#FFF" close={false}>
-			<Image src="/development/madlibs/logo.png" align="center"/>
+		<Modal open={open} fade={complete} background='#FFF' close={false}>
+			<Image src='/development/madlibs/logo.png' align='center'/>
 			<Title>MadLibs, React style</Title>
-			<ProgressIndicator current={current} max={total} width="80%" backgroundColor="#DEF" />
+			<ProgressIndicator current={current} max={total} width='80%' backgroundColor='#DEF' />
 			<Copyright/>
 		</Modal>
 	);

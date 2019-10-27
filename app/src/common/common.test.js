@@ -38,7 +38,7 @@ describe('arrayEquals', () => {
 	describe('Default validator', () => {
 		test('Equal values equal', () => {
 			expect(arrayEquals([true], [true])).toBe(true);
-			expect(arrayEquals(["a", "b"], ["a", "b"])).toBe(true);
+			expect(arrayEquals(['a', 'b'], ['a', 'b'])).toBe(true);
 			expect(arrayEquals([0, undefined, false], [0, undefined, false])).toBe(true);
 			const testObj = {};
 			expect(arrayEquals([testObj], [testObj])).toBe(true);
@@ -46,7 +46,7 @@ describe('arrayEquals', () => {
 
 		test('Unequal values are unequal', () => {
 			expect(arrayEquals([true], [1])).toBe(false);
-			expect(arrayEquals(["a", 1], ["a", "1"])).toBe(false);
+			expect(arrayEquals(['a', 1], ['a', '1'])).toBe(false);
 			expect(arrayEquals([false, true], [undefined, true])).toBe(false);
 			expect(arrayEquals([{}], [{}])).toBe(false);
 		});
@@ -63,7 +63,7 @@ describe('arrayEquals', () => {
 				});
 			}
 
-			const testA = [{a: "a"}, {b: "b"}];
+			const testA = [{a: 'a'}, {b: 'b'}];
 			const testB = testA.map(x => ({...x}) );
 			const testTrueValidator = jest.fn(() => true);
 			const testFalseValidator = jest.fn(() => false);
@@ -85,26 +85,26 @@ describe('arrayEquals', () => {
 
 describe('buildClassName', () => {
 	const testStyles = {
-		a: "x",
-		b: "y",
-		c: "z"
+		a: 'x',
+		b: 'y',
+		c: 'z'
 	};
 
 	test('Returns function that returns style based upon name', () => {
 		const testFunction = buildClassName(testStyles);
-		expect(testFunction("a")).toBe(testStyles.a);
+		expect(testFunction('a')).toBe(testStyles.a);
 	});
 });
 
 describe('buildClassNames', () => {
 	const testStyles = {
-		a: "x",
-		b: "y",
-		c: "z"
+		a: 'x',
+		b: 'y',
+		c: 'z'
 	};
 
 	test('Returns values based on provided array and styles object', () => {
-		expect(buildClassNames(testStyles, ["a", "b", "c"])).toBe("x y z");
+		expect(buildClassNames(testStyles, ['a', 'b', 'c'])).toBe('x y z');
 	});
 });
 
@@ -126,9 +126,9 @@ describe('cancelEvent', () => {
 });
 
 describe('chooseList', () => {
-	const trueList = ["true1", "true2"];
-	const falseList = ["false1", "false2"];
-	const addlList = ["addl1", "addl2"];
+	const trueList = ['true1', 'true2'];
+	const falseList = ['false1', 'false2'];
+	const addlList = ['addl1', 'addl2'];
 
 	test('true returns proper list', () => {
 		expect(chooseList(true, trueList, falseList)).toEqual(trueList);
@@ -149,9 +149,9 @@ describe('chooseList', () => {
 
 describe('maskObject', () => {
 	const testObject = {
-		a: "a",
-		b: "b",
-		c: "c"
+		a: 'a',
+		b: 'b',
+		c: 'c'
 	};
 
 	test('Mask removes extra props', () => {
@@ -200,7 +200,7 @@ describe('objectEquals', () => {
 		b: 1
 	};
 	const objD = {
-		a: "true",
+		a: 'true',
 		b: 1,
 		c: null
 	};

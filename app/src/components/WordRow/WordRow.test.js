@@ -29,12 +29,12 @@ describe('<WordRow/>', () => {
 	const testProps = {
 		entryIndex: 1,
 		storyIndex: 2,
-		value: "test",
-		help: "help",
-		label: "word",
+		value: 'test',
+		help: 'help',
+		label: 'word',
 		words: [
-			"a",
-			"b"
+			'a',
+			'b'
 		],
 		dispatch: jest.fn()
 	},
@@ -60,7 +60,7 @@ describe('<WordRow/>', () => {
 			</div>
 			<div>
 				<input type='text' className={styles.input} name={'field-' + entryIndex} id={'field-' + entryIndex} value={value} onChange={onChange}/>
-				<Button className={styles.button} onClick={onClick} title="Randomize this word"><Refresh className={styles.refresh}/></Button>
+				<Button className={styles.button} onClick={onClick} title='Randomize this word'><Refresh className={styles.refresh}/></Button>
 			</div>
 		</div>); //
 
@@ -80,7 +80,7 @@ describe('<WordRow/>', () => {
 
 		dispatch.mockClear();
 
-		const newValue = "new";
+		const newValue = 'new';
 		output.find('input').simulate('change', {
 			target: {
 				value: newValue

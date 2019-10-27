@@ -25,7 +25,7 @@ MasterDetailLayout.propTypes = {
 	 *	a tab will call this function instead, with a boolean argument set to {true}
 	 *	if the detail panel should be presented. This is intended to be used to trigger
 	 *	state changes in the application components, which would then redraw the panels
-	 *	by sending the argument through "highlightDetails".
+	 *	by sending the argument through 'highlightDetails'.
 	 */
 	highlightDetailCallback: PropTypes.func,
 
@@ -37,14 +37,14 @@ MasterDetailLayout.propTypes = {
 
 		const children = props[propName];
 		const hasChildren = {
-			"MasterPanel" : false,
-			"DetailPanel" : false
+			'MasterPanel' : false,
+			'DetailPanel' : false
 		};
 		let error = null;
 		React.Children.forEach(children, child => {
 			if (error) return; // only return first error
 
-			if (typeof child === "string") {
+			if (typeof child === 'string') {
 				error = new Error(`HTML and text must be contained within the <MasterPanel/> or <DetailPanel/> inside a ${componentName}.`);
 			}
 			else {

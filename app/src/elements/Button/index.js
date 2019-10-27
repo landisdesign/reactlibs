@@ -14,7 +14,7 @@ Button.propTypes = {
 	 */
 	isSubmit: PropTypes.bool,
 	/**
-	 *	When set to {true}, provides the "default button" colored styling instead of the standard grey
+	 *	When set to {true}, provides the 'default button' colored styling instead of the standard grey
 	 */
 	isDefault: PropTypes.bool,
 	/**
@@ -80,7 +80,7 @@ function Button(props) {
 
 	const buttonProps = {
 		className: (className && className + ' ') + (isDefault ? styles.default : styles.button),
-		type: isSubmit ? "submit" : "button",
+		type: isSubmit ? 'submit' : 'button',
 		...maskObject(props, objectMask)
 	};
 	return <button {...buttonProps}>{children}</button>;

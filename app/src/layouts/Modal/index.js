@@ -13,11 +13,11 @@ Modal.propTypes = {
 	 */
 	open: PropTypes.bool,
 	/**
-		Defines the fade behavior for how the modal is rendered. By default there is no fade effect and the modal is simply visible or not based upon the "open" property.
+		Defines the fade behavior for how the modal is rendered. By default there is no fade effect and the modal is simply visible or not based upon the 'open' property.
 
-		If set to {true}, the modal will fade into the state provided by "open". If "open" is {true}, the modal will appear to fade into visibility. If "open" is {false}, it will fade out and disappear.
+		If set to {true}, the modal will fade into the state provided by 'open'. If 'open' is {true}, the modal will appear to fade into visibility. If 'open' is {false}, it will fade out and disappear.
 
-		If set to a function, the modal will fade, but once the fade completes, the function will be called, with the value of "open" passed as the only argument.
+		If set to a function, the modal will fade, but once the fade completes, the function will be called, with the value of 'open' passed as the only argument.
 	 */
 	fade:  PropTypes.oneOfType([
 		PropTypes.bool,
@@ -58,13 +58,13 @@ function Modal({open = false, fade = false, close = true, background, title, chi
 
 	async function fadeModal(div, toOpen, fade) {
 		// Open class required to provide display grid (display cannot be transitioned)
-		const transitionClassNames = buildClassNames(styles, chooseList(toOpen, ["opening", "transitioning"], ["closing"], ["modal", "open"]));
-		const completionClassNames = buildClassNames(styles, chooseList(toOpen, ["opening"], ["closing", "transitioning"], ["modal", "open"]));
+		const transitionClassNames = buildClassNames(styles, chooseList(toOpen, ['opening', 'transitioning'], ['closing'], ['modal', 'open']));
+		const completionClassNames = buildClassNames(styles, chooseList(toOpen, ['opening'], ['closing', 'transitioning'], ['modal', 'open']));
 
 		div.className = transitionClassNames;
 		await sleep(1);
 		div.className = completionClassNames;
-		if (typeof fade === "function") {
+		if (typeof fade === 'function') {
 			await sleep(toOpen ? 600 : 650);
 			fade(toOpen);
 		}
@@ -83,9 +83,9 @@ function Modal({open = false, fade = false, close = true, background, title, chi
 	}
 
 	useEffect(() => {
-		document.addEventListener("keyup", modalKeyHandler);
+		document.addEventListener('keyup', modalKeyHandler);
 		return () => {
-			document.removeEventListener("keyup", modalKeyHandler);
+			document.removeEventListener('keyup', modalKeyHandler);
 		};
 	});
 
@@ -96,16 +96,16 @@ function Modal({open = false, fade = false, close = true, background, title, chi
 	;
 
 	if (closeHandler) {
-		if (typeof closeHandler != "function") {
+		if (typeof closeHandler != 'function') {
 			closeHandler = defaultCloseHandler;
 		}
 	}
 
-	const initialClassNames = buildClassNames(styles, chooseList(open ? !fade : fade, ["open"], ["closed"], ["modal"]));
+	const initialClassNames = buildClassNames(styles, chooseList(open ? !fade : fade, ['open'], ['closed'], ['modal']));
  
 	return (
 		<div className={initialClassNames} style={ {background} } ref={div => {modalDiv = div; if (div && fade) fadeModal(div, open, fade);} }>
-			<div className={styles["modal-content"]}>
+			<div className={styles['modal-content']}>
 				<ModalHeader title={title} closeHandler={closeHandler}/>
 				<div>
 					{ children }

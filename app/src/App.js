@@ -5,13 +5,13 @@ import Landing from './components/Landing';
 import Application from './components/Application';
 
 function App() {
-	const homeMatch = useRouteMatch({path: "/", exact: true });
-	const storyHomeMatch = useRouteMatch({path: "/stories", exact: true});
-	const storyMatch = useRouteMatch("/stories/:id");
+	const homeMatch = useRouteMatch({path: '/', exact: true });
+	const storyHomeMatch = useRouteMatch({path: '/stories', exact: true});
+	const storyMatch = useRouteMatch('/stories/:id');
 	const invalidPage = !(homeMatch || storyHomeMatch || storyMatch);
 
 	if (invalidPage) {
-		return <Redirect to="/"/>;
+		return <Redirect to='/'/>;
 	}
 	else {
 		const id = storyMatch && storyMatch.params.id;

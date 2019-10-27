@@ -1,8 +1,8 @@
-const reducerPrefix = "ENTRIES_";
-const ENTRIES_INIT_ENTRIES = reducerPrefix + "INIT_ENTRIES";
-const ENTRIES_SET_ENTRY = reducerPrefix + "SET_ENTRY";
-const ENTRIES_SET_ENTRIES = reducerPrefix + "SET_ENTRIES";
-const ENTRIES_CLEAR_ENTRIES = reducerPrefix + "CLEAR_ENTRIES";
+const reducerPrefix = 'ENTRIES_';
+const ENTRIES_INIT_ENTRIES = reducerPrefix + 'INIT_ENTRIES';
+const ENTRIES_SET_ENTRY = reducerPrefix + 'SET_ENTRY';
+const ENTRIES_SET_ENTRIES = reducerPrefix + 'SET_ENTRIES';
+const ENTRIES_CLEAR_ENTRIES = reducerPrefix + 'CLEAR_ENTRIES';
 
 function initEntries(stories) {
 	return {
@@ -38,7 +38,7 @@ function clearEntries(storyIndex) {
 function entriesReducer(state = [], action) {
 	switch (action.type) {
 		case ENTRIES_INIT_ENTRIES:
-			return action.stories.map(story => (new Array(story.fields.length)).fill("") );
+			return action.stories.map(story => (new Array(story.fields.length)).fill('') );
 		case ENTRIES_SET_ENTRY:
 			{
 				const newState = state.map(storyEntries => [...storyEntries]);
@@ -49,7 +49,7 @@ function entriesReducer(state = [], action) {
 		case ENTRIES_SET_ENTRIES:
 			return state.map((entries, index) => (index === action.storyIndex ? [...action.values] : [...entries]));
 		case ENTRIES_CLEAR_ENTRIES:
-			return state.map((entries, index) => (index === action.storyIndex ? (new Array(entries.length)).fill("", 0, entries.length) : [...entries]));
+			return state.map((entries, index) => (index === action.storyIndex ? (new Array(entries.length)).fill('', 0, entries.length) : [...entries]));
 		default:
 			return state;
 	}

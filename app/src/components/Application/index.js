@@ -13,13 +13,13 @@ Application.propTypes = {
 	/**
 	 *	The id of the story to present, typically passed after /stories/ in the
 	 *	URL. If id isn't present or is incorrect, a default welcome screen is
-	 *	presented and the URL is truncated to /stories. If the id is "surprise",
+	 *	presented and the URL is truncated to /stories. If the id is 'surprise',
 	 *	and it wasn't previously, a random story will be chosen.
 	 */
 	id: PropTypes.string
 }
 
-const RANDOM_ID = "surprise";
+const RANDOM_ID = 'surprise';
 
 /**
  *	Application wrapper for the entire application. It identifies the story to
@@ -29,7 +29,7 @@ function Application({id = ''}) {
 
 	function getOptions(state) {
 		const options = state.stories.stories.map( ({id, title}) => ({value: id, label: title}) );
-		options.push( {value: RANDOM_ID, label: "Pick a random story"} );
+		options.push( {value: RANDOM_ID, label: 'Pick a random story'} );
 		return options;
 	}
 
@@ -70,7 +70,7 @@ function Application({id = ''}) {
 		return null;
 	}
 	else if (id && index === -1) {
-		return <Redirect to="/stories"/>;
+		return <Redirect to='/stories'/>;
 	}
 	else {
 		if (willClear) {

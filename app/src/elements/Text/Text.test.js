@@ -10,8 +10,8 @@ import styles from './Text.module.scss';
 describe('<Text/>', () => {
 
 	// Styles is not set up in the scss module. Explicitly set it up here to return values.
-	styles.default = "default";
-	styles.story = "story";
+	styles.default = 'default';
+	styles.story = 'story';
 
 	test('Default render', ()=> {
 		const content = 'text';

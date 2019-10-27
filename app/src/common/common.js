@@ -13,7 +13,7 @@ const arrayEquals = (a, b, entryValidator = ((aField, bField) => aField === bFie
 
 const buildClassName = styles => name => styles[name];
 
-const buildClassNames = (styles, classNames) => classNames.map(buildClassName(styles)).join(" ");
+const buildClassNames = (styles, classNames) => classNames.map(buildClassName(styles)).join(' ');
 
 const cancelEvent = (e) => {
 	e.preventDefault();

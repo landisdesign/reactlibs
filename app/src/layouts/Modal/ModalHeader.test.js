@@ -10,8 +10,8 @@ import styles from './ModalHeader.module.scss';
  */
 describe('<ModalHeader/>', () => {
 	
-	styles.modalHeader = "modalHeader";
-	styles.close = "close";
+	styles.modalHeader = 'modalHeader';
+	styles.close = 'close';
 
 	test('No attributes', () => {
 		const output = shallow(<ModalHeader/>); //
@@ -26,14 +26,14 @@ describe('<ModalHeader/>', () => {
 	});
 
 	test('Title only', () => {
-		const title="Text";
+		const title='Text';
 		const output = shallow(<ModalHeader title={title}/>); //
 		const expected = <h1 className={styles.modalHeader}><span>{title}</span></h1>; //
 		expect(output.equals(expected)).toBe(true);
 	});
 
 	test('Close box and', () => {
-		const title="Text";
+		const title='Text';
 		const func = ()=>{};
 		const output = shallow(<ModalHeader title={title} closeHandler={func}/>); //
 		const expected = <h1 className={styles.modalHeader}><span>{title}</span><span className={styles.close} onClick={func}><Close actionable={true}/></span></h1>; //

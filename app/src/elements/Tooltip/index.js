@@ -28,7 +28,7 @@ Tooltip.propTypes = {
 function Tooltip({content, id, children}) {
 	return (<>
 		<span data-tip data-for={id}>{children}</span>
-		<ReactTooltip className={styles.content} id={id} type="info" effect="solid" html={true}>{content}</ReactTooltip>
+		<ReactTooltip className={styles.content} id={id} type='info' effect='solid' html={true}>{content}</ReactTooltip>
 	</>);
 }
 

@@ -12,7 +12,7 @@ describe('<Copyright/>', () => {
 		const copyright = render(<Copyright/>); //
 
 		expect(copyright.hasClass(styles.copyright)).toBe(true);
-		expect(copyright.html()).toContain("Copyright");
-		expect(copyright.html()).toContain("Michael Landis");
+		expect(copyright.html()).toContain('Copyright');
+		expect(copyright.html()).toContain('Michael Landis');
 	});
 });

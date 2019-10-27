@@ -1,4 +1,4 @@
-const WORDS_LOAD = "WORDS_LOAD";
+const WORDS_LOAD = 'WORDS_LOAD';
 
 function loadWords(wordConfig) {
 	return {
@@ -13,7 +13,7 @@ function wordsReducer(state = {}, action) {
 
 		const {wordMap, referrers} = words.reduce((acc, word) => {
 			acc.wordMap[word.id] = word;
-			if ("ref" in word) acc.referrers.push(word.id);
+			if ('ref' in word) acc.referrers.push(word.id);
 			return acc;
 		}, {wordMap: {}, referrers: []});
 

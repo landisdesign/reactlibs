@@ -22,7 +22,7 @@ describe('<Base/>', () => {
 	});
 
 	test('Custom render', () => {
-		const content = "test";
+		const content = 'test';
 		const className = 'foo';
 		const viewBox = '0 0 16 16';
 		const func = () => {};

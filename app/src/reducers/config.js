@@ -11,12 +11,12 @@ import 'whatwg-fetch';
 import { sleep } from '../common/common';
 import { initEntries } from './entries';
 
-const reducerPrefix = "CONFIG_";
-const INIT_CONFIG = reducerPrefix + "INIT_CONFIG";
-const LOAD_STORIES = reducerPrefix + "LOAD_STORIES";
-const LOAD_WORD_LIST = reducerPrefix + "LOAD_WORD_LIST";
-const RECONCILE_CONFIG = reducerPrefix + "RECONCILE_CONFIG";
-const START_APPLICATION = reducerPrefix + "START_APPLICATION";
+const reducerPrefix = 'CONFIG_';
+const INIT_CONFIG = reducerPrefix + 'INIT_CONFIG';
+const LOAD_STORIES = reducerPrefix + 'LOAD_STORIES';
+const LOAD_WORD_LIST = reducerPrefix + 'LOAD_WORD_LIST';
+const RECONCILE_CONFIG = reducerPrefix + 'RECONCILE_CONFIG';
+const START_APPLICATION = reducerPrefix + 'START_APPLICATION';
 
 /*
  *	Synchronous actions. All of them are called internally by the thunks, to
@@ -73,9 +73,9 @@ function fetchConfig( {url: configUrl, minDelay} ) {
 
 	const requestOptions = {
 		headers: new Headers({
-			"Accept": "application/json, text/plain"
+			'Accept': 'application/json, text/plain'
 		}),
-		mode: "same-origin"
+		mode: 'same-origin'
 	};
 
 	function checkStatus(response) {
@@ -161,7 +161,7 @@ const initialConfig = {
 /**
  * Reducer
  *
- * Reminder: This retrieves and returns the entire state, not just a "config" slice.
+ * Reminder: This retrieves and returns the entire state, not just a 'config' slice.
  */
 function configReducer(config = initialConfig, action) {
 
@@ -169,7 +169,7 @@ function configReducer(config = initialConfig, action) {
 
 		function cloneWordList(wordList) {
 			const newList = {...wordList};
-			if ("words" in wordList) {
+			if ('words' in wordList) {
 				newList.words = [...wordList.words];
 			}
 			return newList;
@@ -223,7 +223,7 @@ function configReducer(config = initialConfig, action) {
 			});
 		default:
 			return config;
-	};
+	}
 }
 
 // I really dislike exposing these, and am only doing so for use in test cases.

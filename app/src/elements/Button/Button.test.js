@@ -13,10 +13,10 @@ describe('<Button/>', () => {
 
 		const button = shallow(<Button>test</Button>); //
 
-		expect(button.matchesElement(<button type="button" className={styles.button}>test</button>)).toBe(true); //
+		expect(button.matchesElement(<button type='button' className={styles.button}>test</button>)).toBe(true); //
 	});
 
-	test('"isDefault" renders properly', () => {
+	test('isDefault renders properly', () => {
 
 		const defaultButton = shallow(<Button isDefault={true}>test</Button>); //
 		expect(defaultButton.hasClass(styles.default)).toBe(true);
@@ -25,7 +25,7 @@ describe('<Button/>', () => {
 		expect(standardButton.hasClass(styles.button)).toBe(true); //
 	});
 
-	test('"isSubmit" renders properly', () => {
+	test('isSubmit renders properly', () => {
 		const submit = shallow(<Button isSubmit={true}>test</Button>); //
 		expect(submit.exists('[type="submit"]')).toBe(true);
 
@@ -65,7 +65,7 @@ describe('<Button/>', () => {
 	});
 
 	test('Unspecified attributes not passed in', () => {
-		const button = shallow(<Button fooBar="a">test</Button>); //
+		const button = shallow(<Button fooBar='a'>test</Button>); //
 		expect(button.exists('[fooBar]')).toBe(false);
 	});
 });

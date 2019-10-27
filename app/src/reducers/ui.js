@@ -1,10 +1,10 @@
-const reducerPrefix = "UI_";
-const UI_IS_RANDOM = reducerPrefix + "IS_RANDOM";
-const UI_SET_STORY = reducerPrefix + "SET_STORY_INDEX";
-const UI_SET_SHOW_EMAIL = reducerPrefix + "SET_SHOW_EMAIL";
-const UI_SET_SHOW_STORY = reducerPrefix + "SET_SHOW_STORY";
-const UI_SET_WILL_CLEAR = reducerPrefix + "SET_WILL_CLEAR";
-const UI_SET_OUTPUT = reducerPrefix + "SET_OUTPUT";
+const reducerPrefix = 'UI_';
+const UI_IS_RANDOM = reducerPrefix + 'IS_RANDOM';
+const UI_SET_STORY = reducerPrefix + 'SET_STORY_INDEX';
+const UI_SET_SHOW_EMAIL = reducerPrefix + 'SET_SHOW_EMAIL';
+const UI_SET_SHOW_STORY = reducerPrefix + 'SET_SHOW_STORY';
+const UI_SET_WILL_CLEAR = reducerPrefix + 'SET_WILL_CLEAR';
+const UI_SET_OUTPUT = reducerPrefix + 'SET_OUTPUT';
 
 function setOutput(output) {
 	return {

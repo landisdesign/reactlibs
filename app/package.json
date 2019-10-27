@@ -45,6 +45,10 @@
       "ecmaVersion": "2018",
       "sourceType": "module"
     },
+    "rules": {
+      "jsx-quotes": [2, "prefer-single"],
+      "quotes": ["error", "single"]
+    },
     "settings": {
       "react": {
         "version": "detect"

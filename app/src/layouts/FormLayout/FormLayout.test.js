@@ -25,9 +25,9 @@ describe('<FormLayout/>', () => {
 	].forEach(className => styles[className] = className);
 
 	test('display default container', () => {
-		const children = "children";
+		const children = 'children';
 		const output = render(<FormLayout>{children}</FormLayout>); //
-		const onSubmit = output.find('form').first().prop("onSubmit");
+		const onSubmit = output.find('form').first().prop('onSubmit');
 		const expected = render(
 			<form className={styles.form} onSubmit={onSubmit}>
 				<div className={styles.container}>
@@ -42,9 +42,9 @@ describe('<FormLayout/>', () => {
 	});
 
 	test('display scrolling container', () => {
-		const children = "children";
+		const children = 'children';
 		const output = render(<FormLayout scrolling={true}>{children}</FormLayout>); //
-		const onSubmit = output.find('form').first().prop("onSubmit");
+		const onSubmit = output.find('form').first().prop('onSubmit');
 		const expected = render(
 			<form className={styles.form} onSubmit={onSubmit}>
 				<div className={styles.containerScrolling}>
@@ -61,22 +61,22 @@ describe('<FormLayout/>', () => {
 	});
 
 	test('provide buttons', () => {
-		const children = "children";
+		const children = 'children';
 		// The buttons are rudimentary at best, because the actual button functionality isn't being tested.
 		const defaultButton = {
-			content: "Default",
+			content: 'Default',
 			isSubmit: true
 		};
 		const otherButtons = [
 			{
-				content: "a"
+				content: 'a'
 			},
 			{
-				content: "b"
+				content: 'b'
 			}
 		];
 		const output = render(<FormLayout defaultButton={defaultButton} buttons={otherButtons}>{children}</FormLayout>); //
-		const onSubmit = output.find('form').first().prop("onSubmit");
+		const onSubmit = output.find('form').first().prop('onSubmit');
 		const expected = render(
 			<form className={styles.form} onSubmit={onSubmit}>
 				<div className={styles.container}>
@@ -84,9 +84,9 @@ describe('<FormLayout/>', () => {
 						{children}
 					</div>
 					<div className={styles.buttons}>
-						<span key="button-0"><Button {...defaultButton} isDefault={true} /></span>
-						<span key="button-1"><Button {...otherButtons[0]} /></span>
-						<span key="button-2"><Button {...otherButtons[1]} /></span>
+						<span key='button-0'><Button {...defaultButton} isDefault={true} /></span>
+						<span key='button-1'><Button {...otherButtons[0]} /></span>
+						<span key='button-2'><Button {...otherButtons[1]} /></span>
 					</div>
 				</div>
 			</form>
@@ -98,9 +98,9 @@ describe('<FormLayout/>', () => {
 	test('provide independent submit function', () => {
 		const submit = jest.fn(()=>false);
 
-		const children = "children";
+		const children = 'children';
 		const defaultButton = {
-			content: "Default",
+			content: 'Default',
 			isSubmit: true
 		}
 		const output = shallow(<FormLayout onSubmit={submit} defaultButton={defaultButton}>{children}</FormLayout>); //

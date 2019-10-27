@@ -48,12 +48,12 @@ function FormLayout({ scrolling = false, onSubmit = cancelEvent, defaultButton =
 		buttons = [{isDefault: true, ...defaultButton}, ...buttons];
 	}
 
-	const className = styles[scrolling ? "containerScrolling" : "container"];
+	const className = styles[scrolling ? 'containerScrolling' : 'container'];
 
 	const buttonPanel = buttons.length ? (
 		<div className={styles.buttons}>
 			{
-				buttons.map((button, index) => <span key={"button" + index}><Button {...button}/></span>)
+				buttons.map((button, index) => <span key={'button' + index}><Button {...button}/></span>)
 			}
 		</div>
 	) : null;

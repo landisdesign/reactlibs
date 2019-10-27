@@ -63,7 +63,7 @@ describe('<ApplicationView/>', () => {
 				<Title packed={true}>MadLibs, React style</Title>
 				<Select className={styles.selector} options={options} value={options[index]} onChange={selectChangeHandler} isSearchable={false} />
 				<Title>{title}</Title>
-				<MasterDetailLayout masterLabel="Words" detailLabel="Story" highlightDetail={showStory} highlightDetailCallback={highlightHandler}>
+				<MasterDetailLayout masterLabel='Words' detailLabel='Story' highlightDetail={showStory} highlightDetailCallback={highlightHandler}>
 					<MasterPanel highlightDetail={showStory}>
 						<WordsPanel/>
 					</MasterPanel>
@@ -103,7 +103,7 @@ describe('<ApplicationView/>', () => {
 
 		const output = mount(<ApplicationView {...testProps}/>);
 		// react-select values can't be changed directly from a mount, so we are calling the onChange handler directly.
-		const onChange = output.find('.' + styles.selector).at(0).prop("onChange");
+		const onChange = output.find('.' + styles.selector).at(0).prop('onChange');
 		onChange(testProps.options[0], useHistory(), useDispatch());
 
 		const actions = getDispatchArguments();
@@ -121,7 +121,7 @@ describe('<ApplicationView/>', () => {
 
 		const output = mount(<ApplicationView {...testProps}/>);
 		// react-select values can't be changed directly from a mount, so we are calling the onChange handler directly.
-		const onChange = output.find('.' + styles.selector).at(0).prop("onChange");
+		const onChange = output.find('.' + styles.selector).at(0).prop('onChange');
 		onChange(testProps.options[2], useHistory(), useDispatch());
 
 		const actions = getDispatchArguments();
