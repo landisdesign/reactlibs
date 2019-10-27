@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, mount, render } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 
 import Modal from './';
 import ModalHeader from './ModalHeader';
@@ -68,7 +68,7 @@ describe('<Modal/>', () => {
 
 	test('Defined fade function', done => {
 		const func = () => {done();};
-		const output = mount(<Modal fade={func}>{children}</Modal>); //
+		mount(<Modal fade={func}>{children}</Modal>); //
 	});
 
 	test('Fades closed', done => {

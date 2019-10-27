@@ -43,6 +43,13 @@ Button.propTypes = {
 	 */
 	value: PropTypes.string,
 	/**
+	 *	The children to insert into the <button> tag. If {content} is provided instead, the children will be ignored.
+	 */
+	children: PropTypes.oneOfType([
+		PropTypes.arrayOf(PropTypes.node),
+		PropTypes.node
+	]),
+	/**
 	 *	Content to be provided as a property. If provided, it will override any children nested within this tag.
 	 */
 	content: PropTypes.node

@@ -40,10 +40,12 @@ function entriesReducer(state = [], action) {
 		case ENTRIES_INIT_ENTRIES:
 			return action.stories.map(story => (new Array(story.fields.length)).fill("") );
 		case ENTRIES_SET_ENTRY:
-			const newState = state.map(storyEntries => [...storyEntries]);
-			const { storyIndex, entryIndex, value } = action;
-			newState[storyIndex][entryIndex] = value;
-			return newState;
+			{
+				const newState = state.map(storyEntries => [...storyEntries]);
+				const { storyIndex, entryIndex, value } = action;
+				newState[storyIndex][entryIndex] = value;
+				return newState;
+			}
 		case ENTRIES_SET_ENTRIES:
 			return state.map((entries, index) => (index === action.storyIndex ? [...action.values] : [...entries]));
 		case ENTRIES_CLEAR_ENTRIES:

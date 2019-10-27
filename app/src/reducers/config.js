@@ -184,22 +184,26 @@ function configReducer(config = initialConfig, action) {
 
 	switch (action.type) {
 		case INIT_CONFIG:
-			const {activationTime, wordSources, storySource} = action.config;
-			return {
-				loading: true,
-				loaded: false,
-				activationTime,
-				wordSources: wordSources.map(url => ({url, loaded: false}) ),
-				storySource: {url: storySource, loaded: false}
-			};
+			{
+				const {activationTime, wordSources, storySource} = action.config;
+				return {
+					loading: true,
+					loaded: false,
+					activationTime,
+					wordSources: wordSources.map(url => ({url, loaded: false}) ),
+					storySource: {url: storySource, loaded: false}
+				};
+			}
 		case LOAD_WORD_LIST:
-			const {index, wordList} = action;
-			return cloneConfig({
-				...config,
-				wordSources: config.wordSources.map( (source, i) => {
-					return i === index ? {...wordList, loaded: true} : source; 
-				})
-			});
+			{
+				const {index, wordList} = action;
+				return cloneConfig({
+					...config,
+					wordSources: config.wordSources.map( (source, i) => {
+						return i === index ? {...wordList, loaded: true} : source; 
+					})
+				});
+			}
 		case LOAD_STORIES:
 			return cloneConfig({
 				...config,

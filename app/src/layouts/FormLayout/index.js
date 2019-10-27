@@ -18,6 +18,14 @@ FormLayout.propTypes = {
 	 */
 	onSubmit: PropTypes.func,
 	/**
+	 *	The contents of the form itself, not including the buttons that should
+	 *	appear at the bottom.
+	 */
+	children: PropTypes.oneOfType([
+		PropTypes.node,
+		PropTypes.arrayOf(PropTypes.node)
+	]),
+	/**
 	 *	The default button. It will appear to the far right with default styling.
 	 */
 	defaultButton: PropTypes.exact(Button.propTypes),

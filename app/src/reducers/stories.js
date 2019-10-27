@@ -10,12 +10,14 @@ function loadStories(storySource) {
 function storiesReducer(state = {stories:[], ids: {}}, action) {
 	switch (action.type) {
 		case STORIES_LOAD:
-			const newState = { stories: action.storySource.map(story => ({...story, fields: [...story.fields] }) ) };
-			newState.idMap = newState.stories.reduce((acc, story, index) => {
-				acc[story.id] = index;
-				return acc;
-			}, {});
-			return newState;
+			{
+				const newState = { stories: action.storySource.map(story => ({...story, fields: [...story.fields] }) ) };
+				newState.idMap = newState.stories.reduce((acc, story, index) => {
+					acc[story.id] = index;
+					return acc;
+				}, {});
+				return newState;
+			}
 		default:
 			return state;
 	}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { MemoryRouter, Route } from 'react-router-dom';
-import { shallow, mount, render } from 'enzyme';
+import { mount, render } from 'enzyme';
 
 import { setState, getDispatchArguments, clearArguments } from 'react-redux';
 

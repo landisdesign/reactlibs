@@ -18,7 +18,7 @@ MasterDetailLayout.propTypes = {
 	 *	Set to {true} if the details tab should appear highlighed by default in phone
 	 *	media instead of the master tab.
 	 */
-	highlightDetails: PropTypes.bool,
+	highlightDetail: PropTypes.bool,
 
 	/**
 	 *	By default, clicking a tab will show that panel. If this is provided, clicking
@@ -104,6 +104,7 @@ function MasterDetailLayout({ masterLabel, detailLabel, highlightDetail = false,
 		// We hard-code the tab order, but not the panel order. Need to determine order by className, but not using querySelector in case there are nested layouts.
 		const panels = (tab => {
 			const firstPanel = tab.parentElement.parentElement.nextElementSibling.firstElementChild;
+			// eslint-disable-next-line no-unused-vars
 			return [firstPanel, firstPanel.nextElementSibling].sort((a, b) => (a.className.indexOf(styles.detailPanel) === -1 ? -1 : 1));
 		})(clickedTab);
 		const panelStyles = [ styles.masterPanel, styles.detailPanel ];
@@ -139,6 +140,13 @@ function MasterDetailLayout({ masterLabel, detailLabel, highlightDetail = false,
 
 MasterPanel.propTypes = {
 	/**
+	 *	The contents to appear in the MasterPanel
+	 */
+	children: PropTypes.oneOfType([
+		PropTypes.node,
+		PropTypes.arrayOf(PropTypes.node)
+	]),
+	/**
 	 *	If set to {true}, the MasterPanel will be hidden by default in phone media.
 	 */
 	highlightDetail: PropTypes.bool
@@ -156,6 +164,13 @@ function MasterPanel({children, highlightDetail = false}) {
 }
 
 DetailPanel.propTypes = {
+	/**
+	 *	The contents to appear in the DetailPanel
+	 */
+	children: PropTypes.oneOfType([
+		PropTypes.node,
+		PropTypes.arrayOf(PropTypes.node)
+	]),
 	/**
 	 *	If set to {true}, the DetailPanel will be shown by default in phone media.
 	 */

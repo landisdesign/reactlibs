@@ -10,6 +10,13 @@ Tooltip.propTypes = {
 	 */
 	content: PropTypes.string.isRequired,
 	/**
+	 *	The content that triggers the tooltip display when hovering
+	 */
+	children: PropTypes.oneOfType([
+		PropTypes.node,
+		PropTypes.arrayOf(PropTypes.node)
+	]),
+	/**
 	 *	The ID that matches the tooltip to the children that highlight the tooltip.
 	 */
 	id: PropTypes.string.isRequired

@@ -1,10 +1,9 @@
 import React from 'react';
-import { shallow, mount, render } from 'enzyme';
+import { mount } from 'enzyme';
 
 import ReactTooltip from 'react-tooltip';
 
 import Tooltip from './';
-import styles from './Tooltip.module.scss';
 
 /*
  *	Note: I place empty line comments after JSX because my editor can't distinguish between closing JSX tags and starting regexes. ¯\_(ツ)_/¯

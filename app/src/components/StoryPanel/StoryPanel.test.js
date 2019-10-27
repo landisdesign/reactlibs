@@ -1,9 +1,9 @@
 import React from 'react';
-import { shallow, mount, render } from 'enzyme';
+import { mount, render } from 'enzyme';
 
 import { setState, getDispatchArguments, clearArguments } from 'react-redux';
 
-import { setOutput, setShowEMail } from '../../reducers/ui';
+import { setShowEMail } from '../../reducers/ui';
 
 import StoryPanel from './';
 import FormLayout from '../../layouts/FormLayout';

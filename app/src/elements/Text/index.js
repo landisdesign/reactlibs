@@ -11,6 +11,14 @@ Text.propTypes = {
 	 */
 	type: PropTypes.string,
 	/**
+	 *	The content to appear in the Text component. Any HTML will be sanitized.
+	 *	If HTML needs to be output, use the {html} property instead.
+	 */
+	children: PropTypes.oneOfType([
+		PropTypes.node,
+		PropTypes.arrayOf(PropTypes.node)
+	]),
+	/**
 	 *	If provided, overrides any provided children with the HTML in this field.
 	 *	THIS FIELD IS INHERENTLY UNSAFE. Be sure to sanitize any HTML before
 	 *	allowing it.

@@ -41,6 +41,13 @@ Modal.propTypes = {
 	close: PropTypes.oneOfType([
 		PropTypes.bool,
 		PropTypes.func
+	]),
+	/**
+	 *	The contents to display in the modal
+	 */
+	children: PropTypes.oneOfType([
+		PropTypes.node,
+		PropTypes.arrayOf(PropTypes.node)
 	])
 };
 

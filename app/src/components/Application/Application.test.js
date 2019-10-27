@@ -1,8 +1,8 @@
 import React from 'react';
 import { MemoryRouter, Route } from 'react-router-dom';
-import { shallow, mount, render } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 
-import { getDummyState, setState, useDispatch, getDispatchArguments, clearArguments } from 'react-redux';
+import { getDummyState, setState, getDispatchArguments, clearArguments } from 'react-redux';
 
 import { clearEntries } from '../../reducers/entries'
 import { setShowStory, setStoryIndex, setWillClear, setRandom, setOutput } from '../../reducers/ui';
@@ -24,7 +24,7 @@ describe('<Application/>', () => {
 	});
 
 	const buildOptions = (state) => {
-		const options = initialState.stories.stories.map(({id, title}) => ({label: title, value: id}));
+		const options = state.stories.stories.map(({id, title}) => ({label: title, value: id}));
 		options.push( {value: RANDOM_ID, label: "Pick a random story"} );
 		return options;
 	}

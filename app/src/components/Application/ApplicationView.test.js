@@ -1,6 +1,6 @@
 import React from 'react';
 import { useHistory, getHistory, clearHistory } from 'react-router-dom';
-import { shallow, mount, render } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 
 import { getDummyState, setState, useDispatch, getDispatchArguments, clearArguments } from 'react-redux';
 
@@ -55,12 +55,13 @@ describe('<ApplicationView/>', () => {
 		} = testProps;
 
 		const output = shallow(<ApplicationView {...testProps}/>);
+		const selectChangeHandler = output.find(Select).prop('onChange');
 		const highlightHandler = output.find(MasterDetailLayout).prop('highlightDetailCallback');
 
 		const expectedDiv = shallow(
 			<div className={styles.application}>
 				<Title packed={true}>MadLibs, React style</Title>
-				<Select className={styles.selector} options={options} value={options[index]} onChange={value => onChange(value, history, dispatch)} isSearchable={false} />
+				<Select className={styles.selector} options={options} value={options[index]} onChange={selectChangeHandler} isSearchable={false} />
 				<Title>{title}</Title>
 				<MasterDetailLayout masterLabel="Words" detailLabel="Story" highlightDetail={showStory} highlightDetailCallback={highlightHandler}>
 					<MasterPanel highlightDetail={showStory}>
@@ -73,8 +74,6 @@ describe('<ApplicationView/>', () => {
 				<Copyright/>
 			</div>
 		);//
-
-		const expectedEMail = shallow(<EmailModal/>);
 
 		/* This test is hacky because <Select/> directly defined above doesn't match
 		   <Select/> as output through <ApplicationView/>. The ids within the select

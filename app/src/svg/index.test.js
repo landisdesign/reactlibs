@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, mount, render } from 'enzyme';
+import { shallow, render } from 'enzyme';
 
 import Base from './';
 import styles from './svg.module.scss';

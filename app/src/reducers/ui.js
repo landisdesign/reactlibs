@@ -67,9 +67,11 @@ function uiReducer(state = initialUI, action) {
 		case UI_SET_STORY:
 		case UI_SET_WILL_CLEAR:
 		case UI_SET_OUTPUT:
-			const data = {...action};
-			delete data.type;
-			return {...state, ...data};
+			{
+				const data = {...action};
+				delete data.type;
+				return {...state, ...data};
+			}
 		default:
 			return state;
 	}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, mount, render } from 'enzyme';
 
-import { useDispatch, setState, getDispatchArguments, getUseSelectorArguments, clearArguments } from 'react-redux';
+import { useDispatch, setState, getDispatchArguments, clearArguments } from 'react-redux';
 
 import { clearEntries, setEntries } from '../../reducers/entries';
 import { setOutput, setShowStory } from '../../reducers/ui';

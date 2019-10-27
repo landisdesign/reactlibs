@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, mount, render } from 'enzyme';
+import { shallow, render } from 'enzyme';
 
 import Text from './';
 import styles from './Text.module.scss';

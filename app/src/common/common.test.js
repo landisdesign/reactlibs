@@ -118,6 +118,7 @@ describe('cancelEvent', () => {
 
 		cancelEvent(e);
 
+		// eslint-disable-next-line no-unused-vars
 		Object.entries(e).map(([key, fn]) => {
 			expect(fn.mock.calls.length).toBe(1);
 		});
@@ -230,6 +231,8 @@ describe('objectEquals', () => {
 	test('Unequal objects are unequal', () => {
 		expect(objectEquals(objA, objD)).toBe(false);
 		expect(objectEquals(objD, objA)).toBe(false);
+		expect(objectEquals(objA, objE)).toBe(false);
+		expect(objectEquals(objD, objE)).toBe(false);
 	});
 })
 

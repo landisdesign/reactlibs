@@ -7,7 +7,14 @@ Title.propTypes = {
 	/**
 	 *	If set to {true}, removes all vertical margins and padding
 	 */
-	packed: PropTypes.bool
+	packed: PropTypes.bool,
+	/**
+	 *	The content to appear within the Title
+	 */
+	children: PropTypes.oneOfType([
+		PropTypes.node,
+		PropTypes.arrayOf(PropTypes.node)
+	]),
 };
 
 /**

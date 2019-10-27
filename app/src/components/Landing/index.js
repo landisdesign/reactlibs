@@ -44,6 +44,7 @@ function Landing() {
 	// We don't care about the state of stories and wordSource, since we need both and they won't be available until current == total
 	function stateUnchanged(a, b) {
 		const props = ["loading", "loaded", "current", "total"];
+		// eslint-disable-next-line react/prop-types
 		return props.every(prop => a[prop] === b[prop]);
 	}
 

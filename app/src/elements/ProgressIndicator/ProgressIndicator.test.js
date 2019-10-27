@@ -1,8 +1,7 @@
 import React from 'react';
-import { shallow, mount, render } from 'enzyme';
+import { render } from 'enzyme';
 
 import ProgressIndicator from './';
-import styles from './ProgressIndicator.module.scss';
 
 /*
  *	Note: I place empty line comments after JSX because my editor can't distinguish between closing JSX tags and starting regexes. ¯\_(ツ)_/¯

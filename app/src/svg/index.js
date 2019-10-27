@@ -1,8 +1,11 @@
+/* eslint-disable react/prop-types */
+// I'm not deconstructing props here because I want to allow any props I'm not modifying to flow into the <svg/> tag.
+
 import React from 'react';
 
 import styles from './svg.module.scss';
 
-function Base(props) { // I'm not deconstructing props here because I want to allow any props I'm not modifying to flow into the <svg/> tag.
+function Base(props) {
 	const {
 		viewBox = '0 0 32 32',
 		actionable,

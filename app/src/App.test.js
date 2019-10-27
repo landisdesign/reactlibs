@@ -1,7 +1,7 @@
 import React from 'react';
 import { MemoryRouter, Route } from 'react-router-dom';
 import { getDummyState, setState } from 'react-redux';
-import { shallow, mount, render } from 'enzyme';
+import { mount } from 'enzyme';
 
 import App from './App';
 import Application from './components/Application';
